@@ -1,4 +1,5 @@
 \documentclass[12pt]{article}
+\usepackage{amsmath}
 \usepackage{hyperref}
 
 \renewcommand\thesection{}
@@ -49,15 +50,21 @@ Inhomonenous evolution can't be done completely analytically, eventhough it can 
 \subsubsection{Lagrangian approach - Zel'dovich approximations}
 \subsubsection{Spherical collapse}
 
- - Lagrangian approx\\
+
 
 \subsection*{Halo assembly bias}
 
+\newpage
 
+\section*{Calculations}
 
-
-
-
+\begin{align}
+P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
+\xi(\vec{r}) &= \frac{1}{(2\pi)^3} \int P(\vec{k}) ~e^{-i \vec{k} \dot \vec{r}} ~d^3 k\\
+\xi(r) &= \frac{4 \pi}{(2\pi)^3} \int_{0}^{\infty} P(k) ~k^2 ~\frac{\sin(kr)}{kr} dk\\
+\xi(r) &= \frac{1}{2\pi^2} \int_{0}^{\infty} P(k) ~k^3 ~\frac{\sin(kr)}{kr} d(\ln k)\\
+\xi(r) &= \int_{0}^{\infty} \Delta^2(k) ~\frac{\sin(kr)}{kr} d(\ln k)
+\end{align}
 
 
 
