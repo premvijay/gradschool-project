@@ -40,38 +40,36 @@ class GaussianRandomField:
         self.FX = np.fft.irfftn(self.FK,shape)
         
     def visualise(self):
-        plt.figure(dpi=120)
-    #    plt.imshow(FX[1])
-        self.image_interact = plt.imshow(self.FX[:,:,0]) #shows 0th frame
-        plt.title("The gaussian random field in physical 3D space")
-        plt.subplots_adjust(left=0.25, bottom=0.25)
+#        plt.figure(dpi=120)
+#       plt.imshow(FX[1])
+        self.visual_fig,self.visual_axis = plt.subplots(dpi=120)
+        self.interact = self.visual_axis.imshow(self.FX[:,:,0]) #shows 0th frame
+        self.visual_axis.set_title("The gaussian random field in physical 3D space")
+        self.visual_fig.subplots_adjust(left=0.25, bottom=0.25)
         axframe = plt.axes([0.25, 0.1, 0.65, 0.03])
-        self.image_slider = widgets.Slider(axframe, 'third direction', 0, self.shape[-1]-1, valinit=0)
-        plt.show()
+        self.visual_slider = widgets.Slider(axframe, 'third direction', 0, self.shape[-1]-1, valinit=0)
         
         def update(val):
 #            print(val)
-            self.image_interact.set_data(self.FX[:,:,int(val)])
-            plt.show()
+            self.interact.set_data(self.FX[:,:,int(val)])
         
-        self.image_slider.on_changed(update)
+        self.visual_slider.on_changed(update)
     
     def compute_Pk_from_field(self):
         self.FK_computed = np.fft.rfftn(self.FX)
         self.Pk_computed = pd.DataFrame(data=np.vstack((self.k.ravel(),
                     np.abs(self.FK_computed.ravel())**2)).T,columns=['k','Pk']).sort_values('k')
         
-    def plot_original_and_computed_Pk(self):
-        plt.figure(dpi=120)
-        self.grouped3 = self.Pk_computed.groupby(pd.cut(self.Pk_computed['k'], bins=np.logspace(0.3,2, 600))).mean()
-        plt.plot(self.grouped3['k'],self.P(self.grouped3['k']),'-',label='Used to generate the random field')
-        plt.plot(self.grouped3['k'],self.grouped3['Pk'],'-',label='Computed from the generated random field')
-        plt.xscale('log')
-        plt.yscale('log')
-        plt.ylim(bottom=10)
-        plt.title("Power spectrum P(k)")
-        plt.legend(loc="lower right")
-        plt.show()
+    def plot_original_and_computed_Pk(self,bins):
+        self.plot_fig,self.plot_axis = plt.subplots(dpi=120)
+        self.grouped3 = self.Pk_computed.groupby(pd.cut(self.Pk_computed['k'], bins=bins)).mean()
+        self.plot_axis.plot(self.grouped3['k'],self.P(self.grouped3['k']),'-',label='Used to generate the random field')
+        self.plot_axis.plot(self.grouped3['k'],self.grouped3['Pk'],'-',label='Computed from the generated random field')
+        self.plot_axis.set_xscale('log')
+        self.plot_axis.set_yscale('log')
+        self.plot_axis.set_ylim(bottom=10)
+        self.plot_axis.set_title("Power spectrum P(k)")
+        self.plot_axis.legend(loc="upper left")
         
         
         
