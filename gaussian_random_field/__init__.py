@@ -1,1 +1,0 @@
-from .main import _power_law

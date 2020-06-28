@@ -14,7 +14,7 @@ def from_power_spectrum(P,shape):
     k = np.sqrt((K**2).sum(axis=0))    # magnitude of K vector
     # k.shape
     Pk = P(k)
-    Pk[0,0] = 0
+#    Pk[0,0] = 0
 
     np.random.seed(840900)
 
@@ -37,8 +37,7 @@ if __name__=="__main__":
     frame = 0
     l = plt.imshow(FX[frame,:,:]) #shows 0th frame
     plt.subplots_adjust(left=0.25, bottom=0.25)
-    
-    axcolor = 'lightgoldenrodyellow'
+
     axframe = plt.axes([0.25, 0.1, 0.65, 0.03])
     sframe = Slider(axframe, 'third direction', 0, 127, valinit=0)
     
