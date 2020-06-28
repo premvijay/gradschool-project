@@ -35,6 +35,25 @@ Do a particle mesh code following the tutorial by Andrey Kravstov \url{https://a
 
 \newpage
 
+\newpage
+
+\section{$\sigma_8$ normalisation}
+It is defined as the root mean square of density variation after smoothing by correlating with spherical tophat function of radius 8 h$^{-1}$ Mpc. In fourier space, this is equivalent to multiplying by the fourier transform of that tophat .
+\begin{align}
+W_s(k) &= 3 ~\frac{j_1(k R_8)}{k R_8} \quad \text{where } R_8 = 8 \text{ h$^{-1}$ Mpc}
+\end{align}
+
+\begin{align}
+\sigma_8 &= \sqrt{ \frac{1}{(2 \pi)^3} \int W_s^2(k) ~|\delta (\vec{k})|^2 ~d^3k}\\
+\sigma_8^2 &=  \frac{1}{(2 \pi)^3} \int W_s^2(k) ~|\delta (\vec{k})|^2 ~d^3k\\
+&= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~|\delta (\vec{k})|^2 ~k^2 dk ~d\Omega\\
+&= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~k^2 dk \int |\delta (\vec{k})|^2  ~d\Omega\\
+&= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~k^2 ~4\pi P(k) ~dk\\
+&= \frac{1}{2 \pi^2} \int W_s^2(k) ~k^2 ~P(k) ~dk
+\end{align}
+
+That integrand drops away from the that 8 h$^{-1}$ Mpc scale
+
 \section{Large Scale Structure notes}
 
 Inhomonenous evolution can't be done completely analytically, eventhough it can be simulated. Analytical tools/models are important to gain deeper understanding.  Simulations help in making, testing and refining these analytical tools along with the observations.\\
@@ -50,7 +69,9 @@ Inhomonenous evolution can't be done completely analytically, eventhough it can 
 \subsubsection{Lagrangian approach - Zel'dovich approximations}
 \subsubsection{Spherical collapse}
 
-
+\subsection{Halo Model}
+\subsubsection{Halo Bias}
+Split $\delta(\vec{x})$ into small scale and large scale components. 
 
 \subsection*{Halo assembly bias}
 
