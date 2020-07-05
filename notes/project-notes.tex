@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
 
 \renewcommand\thesection{}
 \renewcommand\thesubsection{\arabic{subsection}}
@@ -32,10 +33,30 @@ Do a particle mesh code following the tutorial by Andrey Kravstov \url{https://a
 \item Read more about halo bias.
 \end{itemize}
  
+ 
+\section{29th June 2020}
+\begin{itemize}
+\item Similar to the smoothed variance $\sigma_8$, derive smoothed correlation function with different arbitrary smoothing.
+\item Take of particle positions in {snapshot\_200*} of simulation scm1024 and use CIC code to get density field. Visualise and compute power spectrum.
+\item Smooth it and then visualize and compute power spectrum.
+\item Read more about halos from Cooray and Sheth section 3.
+\end{itemize}
+ 
 
 \newpage
 
-\newpage
+
+
+\section*{Correlation function power spectrum relation}
+
+\begin{align}
+P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
+\xi(\vec{r}) &= \frac{1}{(2\pi)^3} \int P(\vec{k}) ~e^{-i \vec{k} \dot \vec{r}} ~d^3 k\\
+\xi(r) &= \frac{4 \pi}{(2\pi)^3} \int_{0}^{\infty} P(k) ~k^2 ~\frac{\sin(kr)}{kr} dk\\
+\xi(r) &= \frac{1}{2\pi^2} \int_{-\infty}^{\infty} P(k) ~k^3 ~\frac{\sin(kr)}{kr} d(\ln k)\\
+\xi(r) &= \int_{-\infty}^{\infty} \Delta^2(k) ~\frac{\sin(kr)}{kr} d(\ln k)
+\end{align}
+
 
 \section{$\sigma_8$ normalisation}
 It is defined as the root mean square of density variation after smoothing by correlating with spherical tophat function of radius 8 h$^{-1}$ Mpc. In fourier space, this is equivalent to multiplying by the fourier transform of that tophat .
@@ -49,10 +70,19 @@ W_s(k) &= 3 ~\frac{j_1(k R_8)}{k R_8} \quad \text{where } R_8 = 8 \text{ h$^{-1}
 &= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~|\delta (\vec{k})|^2 ~k^2 dk ~d\Omega\\
 &= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~k^2 dk \int |\delta (\vec{k})|^2  ~d\Omega\\
 &= \frac{1}{(2 \pi)^3} \int W_s^2(k) ~k^2 ~4\pi P(k) ~dk\\
-&= \frac{1}{2 \pi^2} \int W_s^2(k) ~k^2 ~P(k) ~dk
+&= \frac{1}{2 \pi^2} \int W_s^2(k) ~k^2 ~P(k) ~dk\\
+&= \int W_s^2(k) ~\Delta^2(k) ~d(\ln k)
 \end{align}
 
 That integrand drops away from the that 8 h$^{-1}$ Mpc scale
+
+\section{Correlation after smoothing:}
+
+\begin{align}
+\xi_{s_1,s_2} (r) = \int_{-\infty}^{\infty} \Delta^2(k) ~W_{s_1}(k) ~W_{s_2}(k) ~\frac{\sin(kr)}{kr} d(\ln k)
+\end{align}
+
+\newpage
 
 \section{Large Scale Structure notes}
 
@@ -77,15 +107,6 @@ Split $\delta(\vec{x})$ into small scale and large scale components.
 
 \newpage
 
-\section*{Calculations}
-
-\begin{align}
-P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
-\xi(\vec{r}) &= \frac{1}{(2\pi)^3} \int P(\vec{k}) ~e^{-i \vec{k} \dot \vec{r}} ~d^3 k\\
-\xi(r) &= \frac{4 \pi}{(2\pi)^3} \int_{0}^{\infty} P(k) ~k^2 ~\frac{\sin(kr)}{kr} dk\\
-\xi(r) &= \frac{1}{2\pi^2} \int_{0}^{\infty} P(k) ~k^3 ~\frac{\sin(kr)}{kr} d(\ln k)\\
-\xi(r) &= \int_{0}^{\infty} \Delta^2(k) ~\frac{\sin(kr)}{kr} d(\ln k)
-\end{align}
 
 
 
