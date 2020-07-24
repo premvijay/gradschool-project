@@ -1,7 +1,7 @@
 #ifndef ASSIGN_FUNC_H_INCLUDED
 #define ASSIGN_FUNC_H_INCLUDED
 
-float W_cic(float *diff){
+float W_cic(float diff){
 return (1.0 - diff);
 };
 
