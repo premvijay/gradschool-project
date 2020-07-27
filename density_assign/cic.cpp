@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include <cmath>
 #include "assign_func.h"
 
 
@@ -42,6 +43,11 @@ int main(int argc, char** argv){
 //    printf("%f \n",density_grid[1][1][1]);
 
     for (int i = 0; i < num_prtcl_this_file; i++) {
+        if (i == 184393){
+            std::cout << xi<<" "<<yi<<" "<<zi<<" \n";
+            printf("Position of particle %i is %f,%f,%f \n", i,xi,yi,zi);
+        };
+        
         fread(&xi, sizeof(float), 1, fp);
         fread(&yi, sizeof(float), 1, fp);
         fread(&zi, sizeof(float), 1, fp);
@@ -65,7 +71,7 @@ int main(int argc, char** argv){
 
     FILE *fp_grid;
     fp_grid = fopen(argv[2],"wb");
-    fwrite(density_grid, sizeof(density_grid),1, fp_grid);
+    fwrite(density_grid, sizeof(float), sizeof(density_grid)/sizeof(float), fp_grid);
 
 
 //    printf("%i \n", i);

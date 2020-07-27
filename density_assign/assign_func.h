@@ -3,7 +3,7 @@
 #define ASSIGN_FUNC_H_INCLUDED
 
 float W_cic(float diff){
-return abs(1.0 - diff);
+return std::abs(1.0 - diff);
 };
 
 float W_ngp(float diff){
