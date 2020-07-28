@@ -5,7 +5,8 @@
 
 
 int main(int argc, char** argv){
-
+    
+    printf("Reading the file %s \n", argv[1]);
     FILE *fp;
 
     /* Open file as binary for reading */
@@ -33,20 +34,20 @@ int main(int argc, char** argv){
 
 //    printf("xi is %f \n",xi);
 
-    int grid_len = 128;
-    float density_grid[grid_len][grid_len][grid_len];
+//    int grid_len = 160;
+//    float density_grid[grid_len][grid_len][grid_len];
 
 
-//    float density_grid1[128][128][128];
-    printf("grid_size is : ", sizeof(density_grid));
+    static float density_grid[160][160][160];
+    printf("grid_size is : %zu \n", sizeof(density_grid));
 
 //    printf("%f \n",density_grid[1][1][1]);
 
     for (int i = 0; i < num_prtcl_this_file; i++) {
-        if (i == 184393){
-            std::cout << xi<<" "<<yi<<" "<<zi<<" \n";
-            printf("Position of particle %i is %f,%f,%f \n", i,xi,yi,zi);
-        };
+//        if (i == 184393){
+//            std::cout << xi<<" "<<yi<<" "<<zi<<" \n";
+//            printf("Position of particle %i is %f,%f,%f \n", i,xi,yi,zi);
+//        };
         
         fread(&xi, sizeof(float), 1, fp);
         fread(&yi, sizeof(float), 1, fp);
