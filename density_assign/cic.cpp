@@ -38,7 +38,7 @@ int main(int argc, char** argv){
 //    float density_grid[grid_len][grid_len][grid_len];
 
 
-    static float density_grid[160][160][160];
+    static float density_grid[151][151][151];
     printf("grid_size is : %zu \n", sizeof(density_grid));
 
 //    printf("%f \n",density_grid[1][1][1]);
@@ -68,7 +68,7 @@ int main(int argc, char** argv){
 
     }
 
-    printf("%f \n",density_grid[1][1][1]);
+    printf("Saving grid %s \n",argv[2]);
 
     FILE *fp_grid;
     fp_grid = fopen(argv[2],"wb");
