@@ -31,14 +31,14 @@ int main(int argc, char** argv){
     float xi,yi,zi;
     int xc,yc,zc;
 
-    printf("xi is %f \n",xi);
+//    printf("xi is %f \n",xi);
 
     int grid_len = 128;
     float density_grid[grid_len][grid_len][grid_len];
 
 
 //    float density_grid1[128][128][128];
-    std::cout << "grid_size"<< sizeof(density_grid);
+    printf("grid_size is : ", sizeof(density_grid));
 
 //    printf("%f \n",density_grid[1][1][1]);
 
