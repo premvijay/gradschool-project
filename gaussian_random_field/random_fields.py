@@ -39,12 +39,16 @@ class GaussianRandomField:
         self.FK = (np.random.randn(*self.k.shape) + np.random.randn(*self.k.shape) *1j) * np.sqrt(self.Pk/2)
         self.FX = np.fft.irfftn(self.FK,shape)
         
-    def visualise(self):
+    def set_field(self,grid):
+        self.FX = grid
+        self.shape = grid.shape
+        
+    def visualise(self,title="The gaussian random field in physical 3D space"):
 #        plt.figure(dpi=120)
 #       plt.imshow(FX[1])
         self.visual_fig,self.visual_axis = plt.subplots(dpi=120)
         self.interact = self.visual_axis.imshow(self.FX[:,:,0]) #shows 0th frame
-        self.visual_axis.set_title("The gaussian random field in physical 3D space")
+        self.visual_axis.set_title(title)
         self.visual_fig.subplots_adjust(left=0.25, bottom=0.25)
         axframe = plt.axes([0.25, 0.1, 0.65, 0.03])
         self.visual_slider = widgets.Slider(axframe, 'third direction', 0, self.shape[-1]-1, valinit=0)
