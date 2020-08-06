@@ -1,7 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath,amssymb}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
+\usepackage{float}
 
 \title{Graduate school project report\\
 	Halo formation in the cosmic web}
@@ -18,18 +20,64 @@ abstract
 \end{abstract}
 
 \section{Introduction}
-Cosmic Microwave Background (CMB) shows that the Universe was homogenous initially with very small inhomogeneities. On the other hand, the universe we see today not only has galaxies but also a lot of interesting structures well beyond the galactic scale. This foam-like large scale structure of the universe is called the cosmic web.
+Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like large scale structure of the universe is called the cosmic web.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{orangepie}
+	\caption{ Large Scale Structure (LSS) revealed by \cite{cite_sdss}}
+	\label{fig:orangepie}
+\end{figure}
+\noindent
+Understanding the statistical properties of the large scale structure and its evolution is crucial to test and constrain cosmological models. Computer simulations can be used to evolve initial inhomogeneities to the structure we see today and hence can compared with sky survey observations.
 
 
 \section{Analytical tools}
+Though the evolution of large scale structure can be simulated, we need analytical tools to get a deeper understanding and also to make generic constraints that can be tested by observations. On the other hand, simulations help in making and refining these analytical tools.\\
 
+\subsection{FLRW background}
+Let us consider the standard $\Lambda$CMD model without any curvature. The background FLRW metric in comoving coordinates is
+\begin{align}
+ds^2 &= -dt^2 + a^2(t) d\vec{x}^2\\
+&= a^2(\eta) \left( -d\eta^2 + d\vec{x}^2 \right) 
+\end{align}
+where $\eta$ is defined as the conformal time.
+
+
+\subsection{Growth of Structure}
+While the evolution of background cosmology can be studied fully analytically, the
+\subsubsection{Newtonian equations for inhomogeneous CDM}
+A large fraction of the matter in the Universe is dark matter and it interacts only by gravity.
+
+\subsubsection{Linear solutions to inhomogeneous CDM}
+
+\subsubsection{Eulerian - 2nd order perturbation theory}
+
+\subsubsection{Lagrangian approach - Zel'dovich approximations}
+
+\subsubsection{Spherical collapse}
+
+%\section{Background}
+Spherical collapse
 
 
 \section{N-body simulations}
 
+\subsection{Particle approach}
+
+\subsection{Grid approach}
+
 
 \section{Analysing a snapshot of a GADGET-2 simulation}
+\cite{aseem_shadab}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../density_assign/UniformGridData_Render_density}
+	\caption{Density field from the snapshot}
+	\label{fig:uniformgriddatarenderdensity}
+\end{figure}
+
 
 \section{Conclusion and Future plan}
 
@@ -37,9 +85,9 @@ Cosmic Microwave Background (CMB) shows that the Universe was homogenous initial
 
 
 \begin{thebibliography}{widest entry}
-\bibitem[GADGET]{cite_key1} bibliographic information
-\bibitem[]{cite_key2} bibliographic information
-   ...
+%\bibitem[GADGET]{cite_key1} bibliographic information
+\bibitem[SDSS]{cite_sdss} \url{https://www.sdss.org/science/}
+\bibitem[simulation]{aseem_shadab} Aseem Paranjape, Shadab Alam, Voronoi volume function: a new probe of cosmology and galaxy evolution, Monthly Notices of the Royal Astronomical Society, Volume 495, Issue 3, July 2020, Pages 3233–3251, \url{https://doi.org/10.1093/mnras/staa1379}
 \end{thebibliography}
 
 
