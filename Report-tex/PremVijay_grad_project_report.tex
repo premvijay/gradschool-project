@@ -69,43 +69,60 @@ Density parameter is defined as
 \end{align}
 %
 so that the first friedmann equation \ref{eq:fried-eqn-1} reduces to $\Omega_{m} + \Omega_{\lambda} = 1$. Let us now switch to conformal time '$\tau$' and define conformal Hubble parameter $\mathcal{H} \equiv \partial_\tau a / a = \dot{a}$. 
-
+\begin{align}
+3 H^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m}\\
+3 \mathcal{H}^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m} a^2
+\end{align}
 
 \subsection{Growth of Structure}
-While the evolution of background cosmology can be studied fully analytically, the inhomogenities responsible for structure formation can't be solved exactly without making any ansatz. Let us define $\delta$ to indicate matter density contrast,
-\begin{align}
-\nonumber
-\delta (\vec{x}, \tau) &\equiv \frac{{\rho}_{m} (\vec{x}, \tau) -\bar{\rho}_{m} (\tau) }{\bar{\rho}_{m} (\tau)} \\
-&= \frac{{\rho}_{m} (\vec{x}, \tau) }{\bar{\rho}_{m} (\tau)} - 1
-\end{align}
-The velocity field is
-\begin{align}
-\vec{v} (\vec{x}, \tau) &= \frac{d \vec{r}}{dt} = \frac{d }{dt} (a \vec{x})\\
-&= \frac{1}{a} \frac{d }{d \tau} (a \vec{x})\\
-&= \frac{da/d \tau}{a} \vec{x} + \frac{d \vec{x}}{d \tau}\\
-&= \mathcal{H} \vec{x} + \vec{u}
-\end{align}
-where $\vec{u}$ is defined as the peculiar velocity.
-
-Evolution of $\delta, \vec{v}$ is described by the continuity equation, Euler equation and Poisson equation.
-\begin{align}
-\partial_{\tau} \delta + \nabla \cdot \left[ (1+ \delta) \vec{u} \right] &= 0\\
-\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} + \left( \vec{u} \cdot \nabla \right)  \vec{u} &= \nabla \Phi\\
-\nabla^2 \Phi &= \frac{3}{2} \Omega_{m}(\tau) \mathcal{H}^2 \delta
-\end{align}
-where $\nabla$ is with respect to comoving coordinates and $\Phi$ is the gravitational potential
-
+While the evolution of background cosmology can be studied fully analytically, the inhomogenities responsible for structure formation can't be solved exactly without making any ansatz. We will look into different approaches but first let us setup the equations.
 
 
 
 
 \subsubsection{Newtonian equations for inhomogeneous CDM}
+The matter density contrast can be quantified in terms of overdensity parameter $\delta$,
+\begin{align}
+\nonumber
+\delta (\vec{x}, \tau) &\equiv \frac{{\rho}_{m} (\vec{x}, \tau) -\bar{\rho}_{m} (\tau) }{\bar{\rho}_{m} (\tau)} \\
+&= \frac{{\rho}_{m} (\vec{x}, \tau) }{\bar{\rho}_{m} (\tau)} - 1
+\end{align}
+The velocity field is then defined as
+\begin{align}
+\vec{v} (\vec{x}, \tau) &\equiv \frac{d \vec{r}}{dt} = \frac{d }{dt} (a \vec{x})\\
+&= \frac{1}{a} \frac{d }{d \tau} (a \vec{x})\\
+&= \frac{da/d \tau}{a} \vec{x} + \frac{d \vec{x}}{d \tau}\\
+&= \mathcal{H} (\tau) ~\vec{x} + \vec{u} (\vec{x}, \tau)
+\end{align}
+where $\vec{u} (\vec{x}, \tau) \equiv d \vec{x} / d\tau$ is called the peculiar velocity, while the first term quantifies the Hubble flow. Due to the time dependance of $\mathcal{H}$, there is an associated acceleration purely due to hubble flow. Let us consider that acceleration by setting peculiar velocity to zero. 
+\begin{align}
+\frac{d}{dt} \left( \mathcal{H} (\tau) ~\vec{x} \right) &= \frac{d}{dt} \frac{da}{dt}  ~\vec{x}\\
+&= \ddot{a}(t) ~\vec{x} = \frac{1}{a} \ddot{a}(t) ~\vec{r}
+\end{align}
+This acceleration can be written in terms of a potential
+\begin{align}
+\bar{\phi} \equiv - \frac{1}{2} a \ddot{a} ~\left| \vec{x}\right| ^2 &= - \frac{1}{2} \frac{\ddot{a}}{a} ~\left| \vec{r}\right| ^2\\
+\implies \nabla_{r} \bar{\phi} &= \frac{\ddot{a}}{a} ~\vec{r}
+\end{align}
+Let $\phi$ be the gravitational potential, we can define the modified gravitaional potential $\Phi \equiv \phi - \bar{\phi}$.
+
+Evolution of the density inhomogeneity $\delta$, the peculiar velocity field  $\vec{u}$, and the modified potential $\Phi$ is described by the continuity equation, Euler equation and Poisson equation.
+\begin{align}
+\partial_{\tau} \delta + \nabla \cdot \left[ (1+ \delta) \vec{u} \right] &= 0\\
+\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} + \left( \vec{u} \cdot \nabla \right)  \vec{u} &= \nabla \Phi\\
+\nabla^2 \Phi &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta
+\end{align}
+where $\nabla$ is with respect to comoving coordinates.
 
 
 \subsubsection{Linear solutions to inhomogeneous CDM}
-
+If the inhomogeneities are small then we can consider them as perturbation to the homogenous background. To the first order of perturbation, we get
 \begin{align}
+\partial_{\tau} \delta + \nabla \cdot \vec{u} &= 0\\
+\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} &= \nabla \Phi\\
+\nabla^2 \Phi &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta
 \end{align}
+
 
 \subsubsection{Eulerian - 2nd order perturbation theory}
 
