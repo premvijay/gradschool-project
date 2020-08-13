@@ -8,7 +8,7 @@
 \title{Graduate school project report\\
 	Halo formation in the cosmic web}
 
-\author{PremVijay V}
+\author{ PremVijay V \qquad Supervisor: Prof. Aseem Paranjape}
 
 
 \begin{document}
@@ -55,6 +55,7 @@ H^2 = \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8 \pi G}{3} \bar{\rho} \\
 &= - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} + \bar{\rho}_{\Lambda} + 3 (-\bar{\rho}_{\Lambda}) \right]\\
 \label{eq:fried-eqn-2}
 &= - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] 
+%\label{eq:fried-eqn-2}
 \end{align}
 %
 Assuming that the matter and dark energy are independently conserved,
@@ -62,16 +63,31 @@ Assuming that the matter and dark energy are independently conserved,
 \dot{\bar{\rho}}_{m} &= -3 H \left(\bar{\rho}_{m} + {\bar{p}_{m}}\right) = - 3 H \bar{\rho}_{m} \\
 \dot{\bar{\rho}}_{\lambda} &= -3 H \left(\bar{\rho}_{\lambda} + \bar{p}_{\lambda} \right) = 0
 \end{align}
-Density parameter is defined as
+Solving the above equations give $\bar{\rho}_{m} \propto a^{-3}$ and $\bar{\rho}_{\lambda}$ is constant.\\
+Density parameters are defined as
 \begin{align}
-\Omega_{m} &\equiv \frac{8 \pi G \bar{\rho}_{m}}{3 H^2}\\
-\Omega_{\lambda} &\equiv \frac{8 \pi G \bar{\rho}_{\lambda}}{3 H^2}
+\Omega_{m} \equiv \frac{8 \pi G \bar{\rho}_{m}}{3 H^2} \quad
+\Omega_{\lambda} \equiv \frac{8 \pi G \bar{\rho}_{\lambda}}{3 H^2}
 \end{align}
 %
-so that the first friedmann equation \ref{eq:fried-eqn-1} reduces to $\Omega_{m} + \Omega_{\lambda} = 1$. Let us now switch to conformal time '$\tau$' and define conformal Hubble parameter $\mathcal{H} \equiv \partial_\tau a / a = \dot{a}$. 
+so that the first Friedmann equation \ref{eq:fried-eqn-1} reduces to $\Omega_{m} + \Omega_{\lambda} = 1$. Let us now switch to conformal time '$\tau$' and define conformal Hubble parameter $\mathcal{H} \equiv \partial_\tau a / a = \dot{a}$.
 \begin{align}
 3 H^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m}\\
-3 \mathcal{H}^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m} a^2
+3 \mathcal{H}^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m} a^2 \label{eq:omega-m-relation}
+\end{align}
+The second Friedmann equation \eqref{eq:fried-eqn-2} becomes 
+\begin{align}
+- \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] &=  \frac{\ddot{a}}{a} = \frac{\dot{\mathcal{H}}}{a}\\
+- \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] a^2 &= \frac{d \mathcal{H}}{a^2 d\tau} a^2\\
+\label{eq:fried-eqn-2-simple}
+\mathcal{H}^2 \left[ - \frac{\Omega_{m}}{2} + \Omega_{\lambda} \right] &= \frac{d \mathcal{H}}{d\tau}
+\end{align} 
+It is useful to define another time evolution $y \equiv \ln a$ so that the equation \eqref{eq:fried-eqn-2-simple} becomes
+\begin{align}
+\Omega_{\lambda} - \frac{\Omega_{m}}{2} &= \frac{d \mathcal{H}}{d\tau} \mathcal{H}^{-2} = \frac{d \mathcal{H}}{\mathcal{H} d\tau} \mathcal{H}^{-1}\\
+&= \frac{d \ln \mathcal{H}}{d\tau}
+ \left[ \frac{da}{a d\tau} \right]^{-1}\\
+&=  \frac{d \ln \mathcal{H}}{d \ln a} = \frac{d \ln \mathcal{H}}{d y} 
 \end{align}
 
 \subsection{Growth of Structure}
@@ -94,7 +110,7 @@ The velocity field is then defined as
 &= \frac{da/d \tau}{a} \vec{x} + \frac{d \vec{x}}{d \tau}\\
 &= \mathcal{H} (\tau) ~\vec{x} + \vec{u} (\vec{x}, \tau)
 \end{align}
-where $\vec{u} (\vec{x}, \tau) \equiv d \vec{x} / d\tau$ is called the peculiar velocity, while the first term quantifies the Hubble flow. Due to the time dependance of $\mathcal{H}$, there is an associated acceleration purely due to hubble flow. Let us consider that acceleration by setting peculiar velocity to zero. 
+where $\vec{u} (\vec{x}, \tau) \equiv d \vec{x} / d\tau$ is called the peculiar velocity, while the first term quantifies the Hubble flow. Due to the time dependance of $\mathcal{H}$, there is an associated acceleration purely due to hubble flow. That acceleration can be found by setting peculiar velocity to zero. 
 \begin{align}
 \frac{d}{dt} \left( \mathcal{H} (\tau) ~\vec{x} \right) &= \frac{d}{dt} \frac{da}{dt}  ~\vec{x}\\
 &= \ddot{a}(t) ~\vec{x} = \frac{1}{a} \ddot{a}(t) ~\vec{r}
@@ -104,12 +120,12 @@ This acceleration can be written in terms of a potential
 \bar{\phi} \equiv - \frac{1}{2} a \ddot{a} ~\left| \vec{x}\right| ^2 &= - \frac{1}{2} \frac{\ddot{a}}{a} ~\left| \vec{r}\right| ^2\\
 \implies \nabla_{r} \bar{\phi} &= \frac{\ddot{a}}{a} ~\vec{r}
 \end{align}
-Let $\phi$ be the gravitational potential, we can define the modified gravitaional potential $\Phi \equiv \phi - \bar{\phi}$.
+Let $\phi$ denote the total gravitational potential in the presence of inhomeneities. We can define the modified gravitaional potential as $\Phi \equiv \phi - \bar{\phi}$.
 
 Evolution of the density inhomogeneity $\delta$, the peculiar velocity field  $\vec{u}$, and the modified potential $\Phi$ is described by the continuity equation, Euler equation and Poisson equation.
 \begin{align}
 \partial_{\tau} \delta + \nabla \cdot \left[ (1+ \delta) \vec{u} \right] &= 0\\
-\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} + \left( \vec{u} \cdot \nabla \right)  \vec{u} &= \nabla \Phi\\
+\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} + \left( \vec{u} \cdot \nabla \right)  \vec{u} &= - \nabla \Phi\\
 \nabla^2 \Phi &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta
 \end{align}
 where $\nabla$ is with respect to comoving coordinates.
@@ -118,13 +134,60 @@ where $\nabla$ is with respect to comoving coordinates.
 \subsubsection{Linear solutions to inhomogeneous CDM}
 If the inhomogeneities are small then we can consider them as perturbation to the homogenous background. To the first order of perturbation, we get
 \begin{align}
+\label{eq:cont-linear}
 \partial_{\tau} \delta + \nabla \cdot \vec{u} &= 0\\
-\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} &= \nabla \Phi\\
+\label{eq:euler-linear}
+\partial_{\tau} \vec{u} + \mathcal{H} \vec{u} &= - \nabla \Phi\\
+\label{eq:poisson-linear}
 \nabla^2 \Phi &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta
+\end{align}
+Taking divergence of \eqref{eq:euler-linear}
+\begin{align}
+%\nonumber
+\partial_{\tau} \nabla \cdot  \vec{u} + \mathcal{H} \nabla \cdot  \vec{u} &= - \nabla^2 \Phi \\
+\intertext{substituting for $\nabla \cdot \vec{u}$ from \eqref{eq:cont-linear} and for $\nabla^2 \Phi$ from \eqref{eq:poisson-linear}}
+\partial_{\tau} (-\partial_{\tau} \delta) + \mathcal{H} (-\partial_{\tau} \delta) &= - \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta\\
+\partial_{\tau}^2 \delta + \mathcal{H} \partial_{\tau} \delta &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) \delta \label{eq:delta-lin}
+\end{align}
+In the last equation, there is no spatial derivatives, so it is just a second order ordinary differential equation for $\delta$. In general, the solution is of the form,
+\begin{align}
+\delta (\vec{x}, \tau) &= A(\vec{x}) D_1^{(+)}(\tau) + B(\vec{x}) D_1^{(-)}(\tau) 
+\end{align}
+where $D_1^{(+)}(\tau)$ denotes growing mode and $D_1^{(-)}(\tau)$ denotes decaying mode. 
+The divergence of peculiar velocity is then
+\begin{align}
+\theta  (\vec{x}, \tau) &\equiv \nabla \cdot  \vec{u} = -\partial_{\tau} \delta\\
+&= - A(\vec{x}) \frac{d D_1^{(+)}}{d \tau} - B(\vec{x}) \frac{d D_1^{(-)}}{d \tau} 
+\end{align}
+The growing mode and decaying mode can be obtained by solving equation \eqref{eq:delta-lin}. \\
+First, let us look into the matter dominated era with
+$\Omega_{m}(\tau) \approx 1$. From equation \eqref{eq:omega-m-relation},
+\begin{align}
+\mathcal{H} &\propto \sqrt{\bar{\rho}_{m} a^2} \propto a^{-1/2}\\
+\implies \frac{da}{d\tau} &\propto a^{1/2}\\
+a^{-1/2} da &\propto d \tau\\
+\intertext{integrating that gives }
+a &\propto \tau^2 \quad \implies \mathcal{H} = \frac{2}{\tau}\\
+H &= \frac{\dot{a}}{a} = \frac{\mathcal{H}}{a} \propto \tau^{-3}
+\end{align}
+Substituting in \eqref{eq:delta-lin},
+\begin{align}
+\partial_{\tau}^2 \delta + \mathcal{H} \partial_{\tau} \delta &= \frac{3}{2} \mathcal{H}^2 \delta\\
+\partial_{\tau}^2 \delta + \frac{2}{\tau} \partial_{\tau} \delta &= \frac{3}{2} \left( \frac{2}{\tau} \right) ^2 \delta\\
+\partial_{\tau}^2 \delta + \frac{2}{\tau} \partial_{\tau} \delta &- \frac{6}{\tau^2} \delta = 0
+\end{align}
+Solving this we get the growing mode $D_1^{(+)}(\tau) \propto \tau^2 \propto a(\tau)$ and the decaying mode $D_1^{(-)}(\tau) \propto \tau^{-3} \propto  H(\tau)$.\\
+It turns out that even after dark energy starts to dominate, the decaying mode stays proportional to the Hubble parameter $D_1^{(-)}(\tau) \propto H(\tau)$. However now the time dependence of Hubble parameter $H(\tau)$ is different.  \\
+Similarly, the growing mode can be generalised to an integral involving Hubble parameter,
+\begin{align}
+D_1^{(+)} \propto H \int^{a} \frac{1}{(a'H(a'))^3} da'
 \end{align}
 
 
-\subsubsection{Eulerian - 2nd order perturbation theory}
+\subsubsection{Eulerian perturbation theory}
+
+\paragraph{2nd order solution}
+
 
 \subsubsection{Lagrangian approach - Zel'dovich approximations}
 
