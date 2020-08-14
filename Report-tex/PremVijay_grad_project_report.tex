@@ -1,9 +1,12 @@
-\documentclass[12pt,twocolumn]{article}
+%\documentclass[12pt,twocolumn]{article}
+\documentclass[12pt]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1.2in]{geometry}
 \usepackage{float}
+\usepackage{wrapfig}
+\usepackage{bigints}
 
 \title{Graduate school project report\\
 	Halo formation in the cosmic web}
@@ -15,21 +18,30 @@
 
 \maketitle
 
+\hyphenpenalty=5000
+
 \begin{abstract}
 abstract
 \end{abstract}
 
 \section{Introduction}
-Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like large scale structure of the universe is called the cosmic web.
+Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like \ref{fig:orangepie} large scale structure of the universe is called the cosmic web. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\linewidth]{orangepie}
-	\caption{ Large Scale Structure (LSS) revealed by \cite{cite_sdss}}
-	\label{fig:orangepie}
-\end{figure}
-\noindent
-Understanding the statistical properties of the large scale structure and its evolution is crucial to test and constrain cosmological models. Computer simulations can be used to evolve initial inhomogeneities to the structure we see today and hence can compared with sky survey observations.
+\begin{wrapfigure}[17]{r}{0.6\linewidth}
+\centering
+\includegraphics[width=0.9\linewidth]{orangepie}
+\caption{ Large Scale Structure (LSS) revealed by \cite{cite_sdss}}
+\label{fig:orangepie}
+\end{wrapfigure}
+
+%\begin{figure}[tbh]
+%	\centering
+%	\includegraphics[width=0.9\linewidth]{orangepie}
+%	\caption{ Large Scale Structure (LSS) revealed by \cite{cite_sdss}}
+%	\label{fig:orangepie}
+%\end{figure}
+%\noindent
+Understanding the statistical properties of the large scale structure and its evolution is crucial to test and constrain cosmological models. Computer simulations can be used to evolve initial inhomogeneities to the structure we see today and hence can be compared with sky survey observations.
 
 
 \section{Analytical tools}
@@ -52,7 +64,7 @@ H^2 = \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8 \pi G}{3} \bar{\rho} \\
 \nonumber
 \dot{H} + H^2 = \frac{\ddot{a}}{a} &= - \frac{4\pi G}{3} \left(\bar{\rho} + 3\bar{p} \right)\\
 \nonumber
-&= - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} + \bar{\rho}_{\Lambda} + 3 (-\bar{\rho}_{\Lambda}) \right]\\
+&= - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} + \bar{\rho}_{\Lambda} + 3 (0 -\bar{\rho}_{\Lambda}) \right]\\
 \label{eq:fried-eqn-2}
 &= - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] 
 %\label{eq:fried-eqn-2}
@@ -61,16 +73,16 @@ H^2 = \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8 \pi G}{3} \bar{\rho} \\
 Assuming that the matter and dark energy are independently conserved,
 \begin{align}
 \dot{\bar{\rho}}_{m} &= -3 H \left(\bar{\rho}_{m} + {\bar{p}_{m}}\right) = - 3 H \bar{\rho}_{m} \\
-\dot{\bar{\rho}}_{\lambda} &= -3 H \left(\bar{\rho}_{\lambda} + \bar{p}_{\lambda} \right) = 0
+\dot{\bar{\rho}}_{\Lambda} &= -3 H \left(\bar{\rho}_{\Lambda} + \bar{p}_{\Lambda} \right) = 0
 \end{align}
-Solving the above equations give $\bar{\rho}_{m} \propto a^{-3}$ and $\bar{\rho}_{\lambda}$ is constant.\\
+Solving the above equations give $\bar{\rho}_{m} \propto a^{-3}$ and $\bar{\rho}_{\Lambda}$ is constant.\\
 Density parameters are defined as
 \begin{align}
 \Omega_{m} \equiv \frac{8 \pi G \bar{\rho}_{m}}{3 H^2} \quad
-\Omega_{\lambda} \equiv \frac{8 \pi G \bar{\rho}_{\lambda}}{3 H^2}
+\Omega_{\Lambda} \equiv \frac{8 \pi G \bar{\rho}_{\Lambda}}{3 H^2}
 \end{align}
 %
-so that the first Friedmann equation \ref{eq:fried-eqn-1} reduces to $\Omega_{m} + \Omega_{\lambda} = 1$. Let us now switch to conformal time '$\tau$' and define conformal Hubble parameter $\mathcal{H} \equiv \partial_\tau a / a = \dot{a}$.
+so that the first Friedmann equation \ref{eq:fried-eqn-1} reduces to $\Omega_{m} + \Omega_{\Lambda} = 1$. Let us now switch to conformal time '$\tau$' and define conformal Hubble parameter $\mathcal{H} \equiv \partial_\tau a / a = \dot{a}$.
 \begin{align}
 3 H^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m}\\
 3 \mathcal{H}^2 \Omega_{m} &= 8 \pi G \bar{\rho}_{m} a^2 \label{eq:omega-m-relation}
@@ -80,14 +92,15 @@ The second Friedmann equation \eqref{eq:fried-eqn-2} becomes
 - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] &=  \frac{\ddot{a}}{a} = \frac{\dot{\mathcal{H}}}{a}\\
 - \frac{4\pi G}{3} \left[ \bar{\rho}_{m} - 2 \bar{\rho}_{\Lambda} \right] a^2 &= \frac{d \mathcal{H}}{a^2 d\tau} a^2\\
 \label{eq:fried-eqn-2-simple}
-\mathcal{H}^2 \left[ - \frac{\Omega_{m}}{2} + \Omega_{\lambda} \right] &= \frac{d \mathcal{H}}{d\tau}
-\end{align} 
-It is useful to define another time evolution $y \equiv \ln a$ so that the equation \eqref{eq:fried-eqn-2-simple} becomes
-\begin{align}
-\Omega_{\lambda} - \frac{\Omega_{m}}{2} &= \frac{d \mathcal{H}}{d\tau} \mathcal{H}^{-2} = \frac{d \mathcal{H}}{\mathcal{H} d\tau} \mathcal{H}^{-1}\\
+\mathcal{H}^2 \left[ - \frac{\Omega_{m}}{2} + \Omega_{\Lambda} \right] &= \frac{d \mathcal{H}}{d\tau}\\
+\Omega_{\Lambda} - \frac{\Omega_{m}}{2} &= \frac{d \mathcal{H}}{d\tau} \mathcal{H}^{-2} = \frac{d \mathcal{H}}{\mathcal{H} d\tau} \mathcal{H}^{-1}\\
 &= \frac{d \ln \mathcal{H}}{d\tau}
- \left[ \frac{da}{a d\tau} \right]^{-1}\\
-&=  \frac{d \ln \mathcal{H}}{d \ln a} = \frac{d \ln \mathcal{H}}{d y} 
+\left[ \frac{da}{a d\tau} \right]^{-1} = \frac{d \ln \mathcal{H}}{d \ln a}
+\end{align} 
+It is useful to define another time evolution parameter $y \equiv \ln a$.
+%so that the equation \eqref{eq:fried-eqn-2-simple} becomes
+\begin{align}
+\Omega_{\Lambda} - \frac{\Omega_{m}}{2} &= \frac{d \ln \mathcal{H}}{d y} 
 \end{align}
 
 \subsection{Growth of Structure}
@@ -96,12 +109,13 @@ While the evolution of background cosmology can be studied fully analytically, t
 
 
 
-\subsubsection{Newtonian equations for inhomogeneous CDM}
+\subsubsection{Newtonian equations for inhomogeneities in $\Lambda$CDM Universe}
+%Since dark matter only by gravity, its density is  
 The matter density contrast can be quantified in terms of overdensity parameter $\delta$,
 \begin{align}
-\nonumber
-\delta (\vec{x}, \tau) &\equiv \frac{{\rho}_{m} (\vec{x}, \tau) -\bar{\rho}_{m} (\tau) }{\bar{\rho}_{m} (\tau)} \\
-&= \frac{{\rho}_{m} (\vec{x}, \tau) }{\bar{\rho}_{m} (\tau)} - 1
+%\nonumber
+\delta (\vec{x}, \tau) &\equiv \frac{{\rho}_{m} (\vec{x}, \tau) -\bar{\rho}_{m} (\tau) }{\bar{\rho}_{m} (\tau)} \quad
+= \frac{{\rho}_{m} (\vec{x}, \tau) }{\bar{\rho}_{m} (\tau)} - 1
 \end{align}
 The velocity field is then defined as
 \begin{align}
@@ -159,32 +173,64 @@ The divergence of peculiar velocity is then
 \theta  (\vec{x}, \tau) &\equiv \nabla \cdot  \vec{u} = -\partial_{\tau} \delta\\
 &= - A(\vec{x}) \frac{d D_1^{(+)}}{d \tau} - B(\vec{x}) \frac{d D_1^{(-)}}{d \tau} 
 \end{align}
-The growing mode and decaying mode can be obtained by solving equation \eqref{eq:delta-lin}. \\
-First, let us look into the matter dominated era with
-$\Omega_{m}(\tau) \approx 1$. From equation \eqref{eq:omega-m-relation},
+The growing mode and decaying mode can be obtained by directly solving the linear ODE \eqref{eq:delta-lin}. Before going into the full solution, let us look into the matter dominated era where $\Omega_{m}(\tau) \approx 1$. 
+Inserting this in the background equation \eqref{eq:omega-m-relation} we get,
 \begin{align}
 \mathcal{H} &\propto \sqrt{\bar{\rho}_{m} a^2} \propto a^{-1/2}\\
-\implies \frac{da}{d\tau} &\propto a^{1/2}\\
-a^{-1/2} da &\propto d \tau\\
-\intertext{integrating that gives }
-a &\propto \tau^2 \quad \implies \mathcal{H} = \frac{2}{\tau}\\
-H &= \frac{\dot{a}}{a} = \frac{\mathcal{H}}{a} \propto \tau^{-3}
+\implies \frac{da}{d\tau} &\propto a^{1/2} \implies
+a^{-1/2} da \propto d \tau\\
+\intertext{We can solve for scale factor evolution by integrating the above equation.}
+a(\tau) &\propto \tau^2 \quad \implies \mathcal{H}(\tau) = \frac{2}{\tau}\\
+H(\tau) &= \frac{\dot{a}}{a} = \frac{\mathcal{H}}{a} \propto \tau^{-3}
 \end{align}
-Substituting in \eqref{eq:delta-lin},
+Hence the linear perturbation equation \eqref{eq:delta-lin} reduces to,
 \begin{align}
 \partial_{\tau}^2 \delta + \mathcal{H} \partial_{\tau} \delta &= \frac{3}{2} \mathcal{H}^2 \delta\\
 \partial_{\tau}^2 \delta + \frac{2}{\tau} \partial_{\tau} \delta &= \frac{3}{2} \left( \frac{2}{\tau} \right) ^2 \delta\\
 \partial_{\tau}^2 \delta + \frac{2}{\tau} \partial_{\tau} \delta &- \frac{6}{\tau^2} \delta = 0
 \end{align}
-Solving this we get the growing mode $D_1^{(+)}(\tau) \propto \tau^2 \propto a(\tau)$ and the decaying mode $D_1^{(-)}(\tau) \propto \tau^{-3} \propto  H(\tau)$.\\
-It turns out that even after dark energy starts to dominate, the decaying mode stays proportional to the Hubble parameter $D_1^{(-)}(\tau) \propto H(\tau)$. However now the time dependence of Hubble parameter $H(\tau)$ is different.  \\
-Similarly, the growing mode can be generalised to an integral involving Hubble parameter,
+By assuming power law solution, we get the growing mode $D_1^{(+)}(\tau) \propto \tau^2 \propto a(\tau)$ and the decaying mode $D_1^{(-)}(\tau) \propto \tau^{-3} \propto  H(\tau)$.\\
+It turns out that even after dark energy starts to dominate, the decaying mode stays proportional to the Hubble parameter $D_1^{(-)}(\tau) \propto H(\tau)$. However, now the time dependence of Hubble parameter $H(\tau)$ is different.  \\
+Similarly, the growing mode can be generalised to an integral involving $H(\tau)$,
 \begin{align}
-D_1^{(+)} \propto H \int^{a} \frac{1}{(a'H(a'))^3} da'
+D_1^{(+)}(\tau) &\propto H(\tau) \int^{\tau} \frac{1}{a(\tau') H^2(\tau')} d\tau'\\
+\implies D_1^{(+)}(a) &\propto H(a) \int^{a} \frac{1}{(a'H(a'))^3} da'
+\end{align}
+We can set the proportionality constant by setting $D_1^{(+)}(a) = a$ during matter dominated phase.
+\begin{align}
+D_1^{(+)}(a) &= \frac{5}{2} \Omega_{m0} \frac{H(a)}{H_0} \int^{a} \frac{1}{(a'H(a')/H_0)^3} da'
 \end{align}
 
-
 \subsubsection{Eulerian perturbation theory}
+We will switch to Fourier space with respect to spatial comoving coordinates. The density inhomogeneity parameter in the Fourier space is defined as
+\begin{align}
+\delta_{\vec{k}}(\tau) \equiv \int d^3k ~e^{-i \vec{k} \cdot \vec{x}} ~\delta(\vec{x},\tau), \qquad
+\delta (\vec{x},\tau) &= \int \frac{d^3k}{(2\pi)^3} ~e^{i \vec{k} \cdot \vec{x}} ~\delta_{\vec{k}}(\tau)
+\end{align}
+Similarly we can define Fourier space variables $\theta_{\vec{k}}(\tau), ~\vec{u}_{\vec{k}}(\tau) ~\&~ \Phi_{\vec{k}}(\tau)$ corresponding to $\theta (\vec{x},\tau), \vec{u} (\vec{x},\tau) ~\&~ \Phi (\vec{x},\tau)$.
+
+The linear partial differential equations \eqref{eq:cont-linear}, \eqref{eq:euler-linear} \& \eqref{eq:poisson-linear} become linear ordinary differential equations in Fourier space and hence each wavemode evolves independently.
+\begin{align}
+\partial_{\tau} \delta_{\vec{k}} + \theta_{\vec{k}} &= 0\\
+\partial_{\tau} \theta_{\vec{k}} + \mathcal{H} \theta_{\vec{k}} - k^2 ~\Phi_{\vec{k}} &= 0\\
+-k^2 ~\Phi_{\vec{k}} &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) ~\delta_{\vec{k}}
+\end{align}
+However when we include non-linear terms, Fourier wavemodes are coupled. Let us assume that there is no vorticity, $\nabla \times \vec{u} = 0$ so that the divergence-less term is zero.  Fourier transforming the continuity equation, we get
+
+\begin{align}
+\partial_{\tau} \delta_{\vec{k}} + \theta_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\vec{k}_1 \cdot \left( \vec{k}_1 + \vec{k}_2 \right) }{k_1^2}  ~\delta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \theta_{\vec{k}} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
+\end{align}
+Fourier transforming the divergence of Euler equation, we get
+\begin{align}
+\partial_{\tau} \theta_{\vec{k}} + \mathcal{H} \theta_{\vec{k}} - k^2 ~\Phi_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right) \left| \vec{k}_1 + \vec{k}_2 \right|^2 }{2 k_1^2 k_2^2}  ~\theta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \theta_{\vec{k}} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
+\end{align}
+Since the poisson equation is linear in position space, there is no coupling terms in the Fourier space.
+\begin{align}
+-k^2 ~\Phi_{\vec{k}} &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) ~\delta_{\vec{k}}
+\end{align}
+
+\paragraph{Perturbative expansion in the matter dominated era}
+
 
 \paragraph{2nd order solution}
 
@@ -193,7 +239,9 @@ D_1^{(+)} \propto H \int^{a} \frac{1}{(a'H(a'))^3} da'
 
 \subsubsection{Spherical collapse}
 
-\subsection{Correlation function power spectrum relation}
+\subsection{Statistical propetries}
+
+\subsubsection{Correlation function power spectrum relation}
 
 \begin{align}
 P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
@@ -219,7 +267,7 @@ P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{../density_assign/UniformGridData_Render_density}
+	\includegraphics[width=0.5\linewidth]{../density_assign/UniformGridData_Render_density}
 	\caption{Density field from the snapshot \quad
 		 Volume rendered with yt-project}
 	\label{fig:uniformgriddatarenderdensity}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  14 AUG 2020 02:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  15 AUG 2020 02:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,37 +248,49 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box30
 )
+(c:/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen126
+\WF@size=\dimen127
+\c@WF@wrappedlines=\count114
+\WF@box=\box31
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
+(c:/texlive/2019/texmf-dist/tex/latex/bigints/bigints.sty
+Package: bigints 2010/02/15 Writing big integrals
+Package bigints Info: This is Bigints by Merciadri Luca. on input line 5.
+)
 (./PremVijay_grad_project_report.aux)
 \openout1 = `PremVijay_grad_project_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen126
-\scratchbox=\box31
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen127
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count115
+\scratchdimen=\dimen128
+\scratchbox=\box32
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen129
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks25
 ) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -296,8 +308,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 14.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring OFF on input line 17.
 
 (c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -305,11 +317,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count120
+\c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (./PremVijay_grad_project_report.out) (./PremVijay_grad_project_report.out)
 \@outlinefile=\write3
@@ -324,171 +336,150 @@ LaTeX Info: Redefining \nameref on input line 14.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* h-part:(L,W,R)=(86.72377pt, 440.84746pt, 86.72377pt)
+* v-part:(T,H,B)=(86.72377pt, 621.52245pt, 86.72377pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
+* \textwidth=440.84746pt
+* \textheight=621.52245pt
+* \oddsidemargin=14.45378pt
+* \evensidemargin=14.45378pt
+* \topmargin=-22.54622pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=4.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumntrue
+* \@twocolumnfalse
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<orangepie.jpg, id=56, 895.345pt x 890.32625pt>
+<orangepie.jpg, id=61, 895.345pt x 890.32625pt>
 File: orangepie.jpg Graphic file (type jpg)
 <use orangepie.jpg>
-Package pdftex.def Info: orangepie.jpg  used on input line 27.
-(pdftex.def)             Requested size: 206.88834pt x 205.7217pt.
+Package pdftex.def Info: orangepie.jpg  used on input line 32.
+(pdftex.def)             Requested size: 238.05841pt x 236.72328pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+Underfull \hbox (badness 3068) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 prop-er-ties of the large scale
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 struc-ture and its evo-lu-tion is
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 cru-cial to test and con-strain
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 ini-tial in-ho-mo-geneities to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (e
+xt4): destination with the same identifier (name{figure.1}) has been already us
+ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.46 \begin{align}
-                   <./orangepie.jpg>] [2]
-Underfull \hbox (badness 3009) in paragraph at lines 178--182
-\OT1/cmr/m/n/12 Solving this we get the grow-ing mode
+l.49 
+      <./orangepie.jpg>] [2]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Lambda' on input line 112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 112.
+
+[3] [4] [5]
+Overfull \hbox (4.7518pt too wide) detected at line 226
+[]
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
-[]\OT1/cmr/bx/n/12 Lagrangian ap-proach -
- []
-
-
-Underfull \hbox (badness 1194) in paragraph at lines 217--217
-\OT1/cmr/bx/n/17.28 a GADGET-2 sim-u-la-
- []
-
-<../density_assign/UniformGridData_Render_density.png, id=140, 370.0224pt x 370
+[6]
+<../density_assign/UniformGridData_Render_density.png, id=171, 370.0224pt x 370
 .0224pt>
 File: ../density_assign/UniformGridData_Render_density.png Graphic file (type p
 ng)
 <use ../density_assign/UniformGridData_Render_density.png>
 Package pdftex.def Info: ../density_assign/UniformGridData_Render_density.png  
-used on input line 222.
-(pdftex.def)             Requested size: 206.88834pt x 206.8893pt.
-
-Underfull \vbox (badness 4366) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-[][]$\OT1/cmtt/m/n/12 https : / / www . sdss . org /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-[]\OT1/cmr/m/n/12 Aseem Paran-jape, Shadab
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-\OT1/cmr/m/n/12 Alam, Voronoi vol-ume
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 237--238
-\OT1/cmr/m/n/12 func-tion: a new probe of
- []
-
-
-Underfull \hbox (badness 2261) in paragraph at lines 237--238
-\OT1/cmr/m/n/12 cos-mol-ogy and galaxy evo-
- []
-
-
-Underfull \hbox (badness 2486) in paragraph at lines 237--238
-\OT1/cmr/m/n/12 lu-tion, Monthly No-tices of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-[]$\OT1/cmtt/m/n/12 https : / / doi . org / 10 . 1093 /
- []
-
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
+used on input line 270.
+(pdftex.def)             Requested size: 220.42372pt x 220.42294pt.
+ [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.238 \end{thebibliography}
-                            <../density_assign/UniformGridData_Render_density.p
-ng>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
- [5
+l.293 \end{document}
+                     <../density_assign/UniformGridData_Render_density.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
- (./PremVijay_grad_project_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
-
-
-Package rerunfilecheck Warning: File `PremVijay_grad_project_report.out' has ch
-anged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PremVijay_grad_project_report.out':
-
-(rerunfilecheck)             Before: F071307104DB92AAC5BB19E54706C7BD;999
-(rerunfilecheck)             After:  5C1EF42A000BA948F7C0B8BC57BD497A;987.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 245.
+(./PremVijay_grad_project_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
+Package rerunfilecheck Info: File `PremVijay_grad_project_report.out' has not c
+hanged.
+(rerunfilecheck)             Checksum: 3BF59BB4D24A426DDB7A43AC07A1F625;1083.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 6485 strings out of 492609
- 93026 string characters out of 6132818
- 205510 words of memory out of 5000000
- 10274 multiletter control sequences out of 15000+600000
- 12572 words of font info for 49 fonts, out of 8000000 for 9000
+ 6657 strings out of 492609
+ 95556 string characters out of 6132818
+ 201152 words of memory out of 5000000
+ 10425 multiletter control sequences out of 15000+600000
+ 17220 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,13n,32p,495b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PremVijay_grad_project_report.pdf (5 pages, 465322 bytes).
+ 28i,14n,32p,495b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PremVijay_grad_project_report.pdf (8 pages, 498693 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 76 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
