@@ -276,7 +276,15 @@ The Jacobian matrix of this transformation is
 \begin{align}
 \bm{J}_{ij} &\equiv \pdv{x_i}{q_j} = \delta_{ij} + \Psi_{i,j}
 \end{align}
-The Jacobian is $J = \text{det}(\bm{J})$
+And the Jacobian is $J \equiv \text{det}(\bm{J})$, so that $J d^3 q = d^3 x$\\
+If we assume that the inhomogeneities are negligible at the initial time, then by mass conservation, we get $d^3 q = (1+\delta) d^3 x$.
+\begin{align}
+\implies J = \frac{1}{1 + \delta}, \qquad \delta = \frac{1}{J} - 1
+\end{align}
+
+
+
+
 
 \subsubsection{Spherical collapse}
 
@@ -307,6 +315,7 @@ P(\vec{k}) &= \int \xi(\vec{r}) ~e^{i \vec{k} \dot \vec{r}} ~d^3r\\
 
 
 \section{N-body simulations}
+
 
 %\subsection{Particle approach}
 %
