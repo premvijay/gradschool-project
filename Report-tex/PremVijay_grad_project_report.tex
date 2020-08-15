@@ -1,12 +1,13 @@
 %\documentclass[12pt,twocolumn]{article}
 \documentclass[12pt]{article}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,bm}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[margin=1.2in]{geometry}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{bigints}
+\usepackage{physics}
 
 \title{Graduate school project report\\
 	Halo formation in the cosmic web}
@@ -30,7 +31,7 @@ Cosmic Microwave Background (CMB) shows that the Universe was initially homogeno
 \begin{wrapfigure}[17]{r}{0.6\linewidth}
 \centering
 \includegraphics[width=0.9\linewidth]{orangepie}
-\caption{ Large Scale Structure (LSS) revealed by \cite{cite_sdss}}
+\caption{ \textit{Large Scale Structure revealed by \cite{cite_sdss}}}
 \label{fig:orangepie}
 \end{wrapfigure}
 
@@ -45,10 +46,10 @@ Understanding the statistical properties of the large scale structure and its ev
 
 
 \section{Analytical tools}
-Though the evolution of large scale structure can be simulated, we need analytical tools to get a deeper understanding and also to make generic constraints that can be tested by observations. On the other hand, simulations help in making and refining these analytical tools. A large fraction of the matter in the Universe is dark matter and it interacts only by gravity. Let us consider the standard $\Lambda$CMD model without any curvature.\\
+Though the evolution of large scale structure can be simulated, we need analytical tools to get a deeper understanding and also to make generic constraints that can be tested by observations. On the other hand, simulations help in making and refining these analytical tools. 
 
 \subsection{FLRW background}
-The background FLRW metric in comoving coordinates is
+We assume the standard $\Lambda$CMD model without any curvature. The FLRW metric for the homogeneous background in comoving coordinates is
 \begin{align}
 ds^2 &= -dt^2 + a^2(t) d\vec{x}^2\\
 &= a^2(\tau) \left( -d\tau^2 + d\vec{x}^2 \right) 
@@ -104,14 +105,16 @@ It is useful to define another time evolution parameter $y \equiv \ln a$.
 \end{align}
 
 \subsection{Growth of Structure}
-While the evolution of background cosmology can be studied fully analytically, the inhomogenities responsible for structure formation can't be solved exactly without making any ansatz. We will look into different approaches but first let us setup the equations.
+While the evolution of background cosmology can be studied fully analytically, the inhomogeneities responsible for structure formation can't be solved exactly without making any ansatz. We will look into different approaches but first let us setup the equations. Since a large fraction of the matter in the Universe is dark matter, gravity plays the major role in structure formation. While we can directly apply the Einstein equations of general relativity, we take a simpler approach by starting with the Newtonian fluid equations.
 
 
 
 
-\subsubsection{Newtonian equations for inhomogeneities in $\Lambda$CDM Universe}
-%Since dark matter only by gravity, its density is  
-The matter density contrast can be quantified in terms of overdensity parameter $\delta$,
+\subsubsection{Newtonian equations in inhomogeneous $\Lambda$CDM Universe}
+%Since dark matter only by gravity, we can start with 
+%The density contrast and relative velocity Large scale structure is the density
+%Let us define the quantities  
+The matter density contrast can be quantified in terms of overdensity field $\delta$,
 \begin{align}
 %\nonumber
 \delta (\vec{x}, \tau) &\equiv \frac{{\rho}_{m} (\vec{x}, \tau) -\bar{\rho}_{m} (\tau) }{\bar{\rho}_{m} (\tau)} \quad
@@ -146,7 +149,7 @@ where $\nabla$ is with respect to comoving coordinates.
 
 
 \subsubsection{Linear solutions to inhomogeneous CDM}
-If the inhomogeneities are small then we can consider them as perturbation to the homogenous background. To the first order of perturbation, we get
+If the inhomogeneities are small then we can consider them as perturbation to the homogeneous background. To the first order of perturbation, the equations are linear.
 \begin{align}
 \label{eq:cont-linear}
 \partial_{\tau} \delta + \nabla \cdot \vec{u} &= 0\\
@@ -218,11 +221,13 @@ The linear partial differential equations \eqref{eq:cont-linear}, \eqref{eq:eule
 However when we include non-linear terms, Fourier wavemodes are coupled. Let us assume that there is no vorticity, $\nabla \times \vec{u} = 0$ so that the divergence-less term is zero.  Fourier transforming the continuity equation, we get
 
 \begin{align}
-\partial_{\tau} \delta_{\vec{k}} + \theta_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\vec{k}_1 \cdot \left( \vec{k}_1 + \vec{k}_2 \right) }{k_1^2}  ~\delta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \theta_{\vec{k}} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
+\label{eq:cont-eqn-fourier}
+\partial_{\tau} \delta_{\vec{k}} + \theta_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\vec{k}_1 \cdot \left( \vec{k}_1 + \vec{k}_2 \right) }{k_1^2}  ~\delta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \vec{k} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
 \end{align}
 Fourier transforming the divergence of Euler equation, we get
 \begin{align}
-\partial_{\tau} \theta_{\vec{k}} + \mathcal{H} \theta_{\vec{k}} - k^2 ~\Phi_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right) \left| \vec{k}_1 + \vec{k}_2 \right|^2 }{2 k_1^2 k_2^2}  ~\theta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \theta_{\vec{k}} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
+\label{eq:euler-eqn-fourier}
+\partial_{\tau} \theta_{\vec{k}} + \mathcal{H} \theta_{\vec{k}} - k^2 ~\Phi_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right) \left| \vec{k}_1 + \vec{k}_2 \right|^2 }{2 k_1^2 k_2^2}  ~\theta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \vec{k} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
 \end{align}
 Since the poisson equation is linear in position space, there is no coupling terms in the Fourier space.
 \begin{align}
@@ -230,14 +235,60 @@ Since the poisson equation is linear in position space, there is no coupling ter
 \end{align}
 
 \paragraph{Perturbative expansion in the matter dominated era}
+~\hfill
+
+We have seen that to the linear order, $\delta$ grows as the scale factor '$a$' in the matter dominated era. And then using continuity equation, $\theta$ evolves as $da/d\tau = \mathcal{H}a$.\\
+The full solution can be expanded as a series.
+\begin{align}
+\delta_{\vec{k}}(a) = \sum_{n=1}^{\infty} a^n \delta_{\vec{k}}^{(n)} , \qquad
+\theta_{\vec{k}}(a) = \mathcal{H} \sum_{n=1}^{\infty} a^n \theta_{\vec{k}}^{(n)}
+\end{align}
+%
+To the second order
+\begin{align}
+\delta_{\vec{k}}(a) = a \delta_{\vec{k}}^{(1)} + a^2 \delta_{\vec{k}}^{(2)}, \qquad
+\theta_{\vec{k}}(a) = a \theta_{\vec{k}}^{(1)} + a^2 \delta_{\vec{k}}^{(2)}
+\end{align}
+Inserting this into the equations \eqref{eq:cont-eqn-fourier} and \eqref{eq:euler-eqn-fourier}, we get
+%\paragraph{2nd order solution}
+%The second order correction is generated from the linear perturbation. 
+\begin{align}
+\delta_{\vec{k}}^{(2)} &= - \int \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~F^{(2)}(\vec{k}_1, \vec{k}_2)  ~\delta_{\vec{k}_2} ~\delta_{\vec{k}_1} ~\delta_D \left( \vec{k} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)\\
+\theta_{\vec{k}}^{(2)} &= - \int \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~G^{(2)}(\vec{k}_1, \vec{k}_2)  ~\delta_{\vec{k}_2} ~\delta_{\vec{k}_1} ~\delta_D \left( \vec{k} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
+\end{align}
+where 
+\begin{align}
+F^{(2)}(\vec{k}_1, \vec{k}_2) &= \frac{5}{7} + \frac{ \vec{k}_1 \cdot \vec{k}_2 }{2 k_1 k_2} \left[ \frac{k_1}{k_2} + \frac{k_2}{k_1} \right] + \frac{2}{7} \frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right)^2 }{k_1^2 k_2^2}\\
+G^{(2)}(\vec{k}_1, \vec{k}_2) &= \frac{3}{7} + \frac{ \vec{k}_1 \cdot \vec{k}_2 }{2 k_1 k_2} \left[ \frac{k_1}{k_2} + \frac{k_2}{k_1} \right] + \frac{4}{7} \frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right)^2 }{k_1^2 k_2^2}
+\end{align}
+Higher order corrections can be obtained similarly. This perturbative approach works as long the inhomogeneity is small ($\delta \ll 1$).
 
 
-\paragraph{2nd order solution}
-
-
-\subsubsection{Lagrangian approach - Zel'dovich approximations}
+\subsubsection{Lagrangian approach - Zel'dovich approximation}
+In Lagrangian approach, coordinates that move along the fluid is used instead of the usual position coordinates. We can define Fluid coordinates $\vec{q}=(q_1,q_2,q_3)$ to be the background comoving coordinates at an initial time, that is $\vec{q} = \vec{x} (\vec{q}, \tau_i)$. At some later time, the displacement field is defined as displacement vector of fluid element.
+\begin{align}
+\vec{\Psi} (\vec{q}, \tau) &\equiv \vec{x} (\vec{q}, \tau) - \vec{x} (\vec{q}, \tau_i)
+\intertext{so that the mapping is,}
+\vec{x} (\vec{q}, \tau) &= \vec{q} + \vec{\Psi} (\vec{q}, \tau)\\
+x_i (\vec{q}, \tau) &= q_i + {\Psi}_i (\vec{q}, \tau)
+\end{align}
+The Jacobian matrix of this transformation is
+\begin{align}
+\bm{J}_{ij} &\equiv \pdv{x_i}{q_j} = \delta_{ij} + \Psi_{i,j}
+\end{align}
+The Jacobian is $J = \text{det}(\bm{J})$
 
 \subsubsection{Spherical collapse}
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Statistical propetries}
 
