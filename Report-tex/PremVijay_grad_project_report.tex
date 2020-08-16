@@ -264,7 +264,7 @@ G^{(2)}(\vec{k}_1, \vec{k}_2) &= \frac{3}{7} + \frac{ \vec{k}_1 \cdot \vec{k}_2 
 Higher order corrections can be obtained similarly. This perturbative approach works as long the inhomogeneity is small ($\delta \ll 1$).
 
 
-\subsubsection{Lagrangian approach - Zel'dovich approximation}
+\subsubsection{Lagrangian perturbation theory}
 In Lagrangian approach, coordinates that move along the fluid is used instead of the usual position coordinates. We can define Fluid coordinates $\vec{q}=(q_1,q_2,q_3)$ to be the background comoving coordinates at an initial time, that is $\vec{q} = \vec{x} (\vec{q}, \tau_i)$. At some later time, the displacement field is defined as displacement vector of fluid element.
 \begin{align}
 \vec{\Psi} (\vec{q}, \tau) &\equiv \vec{x} (\vec{q}, \tau) - \vec{x} (\vec{q}, \tau_i)
@@ -274,19 +274,84 @@ x_i (\vec{q}, \tau) &= q_i + {\Psi}_i (\vec{q}, \tau)
 \end{align}
 The Jacobian matrix of this transformation is
 \begin{align}
-\bm{J}_{ij} &\equiv \pdv{x_i}{q_j} = \delta_{ij} + \Psi_{i,j}
+\bm{J}_{ij} &\equiv \pdv{x_i}{q_j} = I_{ij} + \Psi_{i,j}
 \end{align}
-And the Jacobian is $J \equiv \text{det}(\bm{J})$, so that $J d^3 q = d^3 x$\\
+where I is identity matrix and the comma index denotes derivative with respect to a Lagrangian coordianate.
+~\\[5pt]
+The Jacobian (determinant) is $J \equiv \text{det}(\bm{J})$, so that $J d^3 q = d^3 x$.\\
 If we assume that the inhomogeneities are negligible at the initial time, then by mass conservation, we get $d^3 q = (1+\delta) d^3 x$.
 \begin{align}
-\implies J = \frac{1}{1 + \delta}, \qquad \delta = \frac{1}{J} - 1
+\implies J = \frac{1}{1 + \delta}, \qquad \delta = \frac{1}{J} - 1 = \text{det}(\bm{J}^{-1}) - 1
 \end{align}
+%
+To the linear order
+\begin{align}
+\left[ \bm{J}^{-1} \right]_{ij} &\simeq I_{ij} - \Psi_{i,j}\\
+\text{det}(\bm{J}^{-1}) &\simeq (1 - \Psi_{1,1}) (1 - \Psi_{2,2}) (1 - \Psi_{3,3})\\
+ &\simeq 1 - \Psi_{1,1} - \Psi_{2,2} - \Psi_{3,3} = 1 - \nabla_{q} \cdot \vec{\Psi}
+\end{align}
+%
+Hence 
+\begin{align}
+\delta^{(1)} (\vec{q}, \tau) &= - \nabla_{q} \cdot \vec{\Psi}^{(1)}
+\end{align}
+From the equation of motion we get the first order growing mode solution.
+\begin{align}
+\nabla_{q} \cdot \vec{\Psi}^{(1)} &= - D_1^{(+)}(\tau) \delta^{(1)} (\vec{q})
+\end{align}
+This is same as what we got from linear Eulerian perturbation theory. \\
+Let us assume irrotational flow, so we can write the displacement field in terms of a potential.
+\begin{align}
+\vec{\Psi}^{(1)} (\vec{q}, \tau) &= - D_1^{(+)}(\tau) \nabla_{q} \psi^{(1)} (\vec{q})
+\end{align}
+Taking divergence of this, 
+\begin{align}
+\nabla_{q} \cdot \vec{\Psi}^{(1)} &= - D_1^{(+)}(\tau) \nabla_{q}^2 \psi^{(1)} (\vec{q})\\
+\implies \delta^{(1)} (\vec{q}) &= \nabla_{q}^2 \psi^{(1)} (\vec{q})
+\end{align}
+Using poisson equation we can see that $\psi^{(1)} (\vec{q}) \propto \Phi^{(1)} (\vec{q},\tau_i)$
 
+\paragraph{Zel'dovich approximation}
+~\hfill
 
-
-
+Zel'dovich used the linear solution as the ansatz for exact solution of the displacement field. But then the solution for $\delta (\vec{q},\tau)$ is obtained by computing the Jacobian.
+\begin{align}
+\vec{\Psi} (\vec{q}, \tau) &= - D_1^{(+)}(\tau) ~\nabla_{q} \psi^{(1)} (\vec{q})\\
+\Psi_{i} (\vec{q}, \tau) &= - D_1^{(+)}(\tau) ~\partial_{i} \psi^{(1)} (\vec{q})
+\end{align}
+%
+The Jacobian matrix is
+\begin{align}
+\bm{J}_{ij} &= I_{ij} + \Psi_{i,j} = I_{ij} - D_1^{(+)}(\tau) ~\partial_{ij} \psi^{(1)} (\vec{q})
+\end{align}
+where $\partial_{ij} \psi^{(1)} (\vec{q})$ is called the tidal tensor and it can be computed from the initial gravitational potential. The tidal tensor is locally diagonalised as,
+\begin{align}
+\partial_{ij} \psi^{(1)} (\vec{q}) &= \text{diag} \left[ \lambda_1 (\vec{q}), \lambda_2 (\vec{q}), \lambda_3 (\vec{q}) \right]
+\end{align}
+where $\lambda_1 > \lambda_2 >\lambda_3$ are the eigenvalue fields.\\
+\begin{align}
+\bm{J}_{ij} &= \text{diag} \left[ \left( 1 - D_1^{(+)}(\tau) \lambda_1 (\vec{q}) \right), \left( 1 - D_1^{(+)}(\tau) \lambda_2 (\vec{q}) \right), \left( 1 - D_1^{(+)}(\tau) \lambda_3 (\vec{q}) \right) \right]
+\end{align}
+Hence the growing mode solution for density contrast is
+\begin{align}
+\delta (\vec{q}, \tau) &= \frac{1}{J} - 1 = \frac{1}{\text{det}(\bm{J})} - 1\\
+&= \left[ \prod_{i=1}^{3} \left( 1 - D_1^{(+)}(\tau) \lambda_i (\vec{q}) \right) \right]^{-1} - 1 \label{eq:Zel'dovich-soln}
+\end{align}
+To the linear order,
+\begin{align}
+\delta^{(1)} (\vec{q}, \tau)  &= - D_1^{(+)}(\tau) \sum_{i=1}^{3} \lambda_i (\vec{q})
+\end{align}
+This is consistent with the linear Eulerian perturbation theory, which is not surprising given that we used the linear solution for displacement field.\\
+But it turns out that the solution \eqref{eq:Zel'dovich-soln} is valid even in mildly non-linear regime. So this Zel'dovich approximation is used to find the initial conditions for N-body simulations
 
 \subsubsection{Spherical collapse}
+\begin{itemize}
+\item In this method, we can get exact solution in the non-linear regime based on an idealized model. 
+\item The overdensity regions are considered spherically symmetric and its evolution is given by simple Newton's equation.
+\item A sphere of certain radius collapses into a halo when the average overdensity within that sphere reaches a critical value of $\delta_c = 1.686$ according to linear theory.
+\item This method is useful in studying halos found in the simulations.
+\end{itemize}
+ 
 
 
 
@@ -297,8 +362,8 @@ If we assume that the inhomogeneities are negligible at the initial time, then b
 
 
 
+\subsection{Statistical tools}
 
-\subsection{Statistical propetries}
 
 \subsubsection{Correlation function power spectrum relation}
 
