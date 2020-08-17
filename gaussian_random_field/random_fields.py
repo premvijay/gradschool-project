@@ -71,7 +71,7 @@ class GaussianRandomField:
         self.plot_axis.plot(self.grouped3['k'],self.grouped3['Pk'],'-',label='Computed from the generated random field')
         self.plot_axis.set_xscale('log')
         self.plot_axis.set_yscale('log')
-        self.plot_axis.set_ylim(bottom=10)
+        self.plot_axis.set_ylim(bottom=1)
         self.plot_axis.set_title("Power spectrum P(k)")
         self.plot_axis.legend(loc="upper left")
         
