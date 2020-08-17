@@ -7,8 +7,10 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Eulerian perturbation theory}{subsection.2.2}% 7
 \BOOKMARK [3][-]{subsubsection.2.2.4}{Lagrangian perturbation theory}{subsection.2.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.2.5}{Spherical collapse}{subsection.2.2}% 9
-\BOOKMARK [2][-]{subsection.2.3}{Statistical tools}{section.2}% 10
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Correlation function power spectrum relation}{subsection.2.3}% 11
-\BOOKMARK [1][-]{section.3}{N-body simulations}{}% 12
-\BOOKMARK [2][-]{subsection.3.1}{Snapshot of a GADGET-2 simulation}{section.3}% 13
-\BOOKMARK [1][-]{section.4}{Conclusion and Future plan}{}% 14
+\BOOKMARK [1][-]{section.3}{Statistics and initial conditions}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Gaussian random fields}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Generating GRF from a given power spectrum}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Matter power spectrum from linear theory}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{N-body simulations}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Snapshot of a GADGET-2 simulation}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Conclusion and Future plan}{}% 16
