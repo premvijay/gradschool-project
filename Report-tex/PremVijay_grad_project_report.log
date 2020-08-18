@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  19 AUG 2020 03:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  19 AUG 2020 03:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,11 +690,13 @@ ter-Pk.pdf> <../jupyter-nb/lambda-cdm-matter-Pk.pdf
 pdfTeX warning: pdflatex.exe (file ../jupyter-nb/lambda-cdm-matter-Pk.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
-<../density-assignment_functions.pdf, id=357, 387.22481pt x 282.56754pt>
-File: ../density-assignment_functions.pdf Graphic file (type pdf)
-<use ../density-assignment_functions.pdf>
-Package pdftex.def Info: ../density-assignment_functions.pdf  used on input lin
-e 482.
+<../density_assign/density-assignment_functions.pdf, id=357, 387.22481pt x 282.
+56754pt>
+File: ../density_assign/density-assignment_functions.pdf Graphic file (type pdf
+)
+<use ../density_assign/density-assignment_functions.pdf>
+Package pdftex.def Info: ../density_assign/density-assignment_functions.pdf  us
+ed on input line 482.
 (pdftex.def)             Requested size: 308.59187pt x 225.18768pt.
  [13]
 <../density_assign/density-field-2D.pdf, id=374, 401.53311pt x 317.27907pt>
@@ -709,7 +711,7 @@ line 498.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.502 
-       <../density-assignment_functions.pdf>]
+       <../density_assign/density-assignment_functions.pdf>]
 <../density_assign/UniformGridData_Render_density.png, id=437, 370.0224pt x 370
 .0224pt>
 File: ../density_assign/UniformGridData_Render_density.png Graphic file (type p
@@ -746,8 +748,8 @@ hanged.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 529.
  ) 
 Here is how much of TeX's memory you used:
- 17482 strings out of 492609
- 299218 string characters out of 6132818
+ 17481 strings out of 492609
+ 299275 string characters out of 6132818
  376307 words of memory out of 5000000
  21128 multiletter control sequences out of 15000+600000
  555363 words of font info for 109 fonts, out of 8000000 for 9000
@@ -769,7 +771,7 @@ c/amsfonts/cm/cmsy6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PremVijay_grad_project_report.pdf (16 pages, 756341 bytes).
+Output written on PremVijay_grad_project_report.pdf (16 pages, 756358 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  398 compressed objects within 4 object streams
