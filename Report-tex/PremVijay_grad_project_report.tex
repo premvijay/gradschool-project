@@ -33,7 +33,7 @@ abstract
 \end{abstract}
 
 \section{Introduction}
-Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like \ref{fig:orangepie} large scale structure of the universe is called the cosmic web. 
+Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like\ref{fig:orangepie} large scale structure of the universe is called the cosmic web. 
 
 \begin{wrapfigure}[17]{r}{0.6\linewidth}
 \centering
@@ -462,20 +462,44 @@ Hence
 \end{align}
 %
 The integrand becomes negligible away from the Fourier mode of 8 h$^{-1}$ Mpc scale.\\
-This quantity $\sigma_8$ is compared with the observations to fix the normalisation constant.
+Power spectrum is normalised by constraining this quantity $\sigma_8$ based on observations.
 
 %\subsubsection*{Generating GRF from power spectrum}
 
 \section{N-body simulations}
-Numerically solving
+
+N-body simulation involves numerically solving for the evolution of a large number of particles under the influence of force.
+
+\begin{align}
+\vec{a}_i &= - \sum_{j=1 \& j\neq i}^{N} \frac{G m_j}{|\vec{x}_i-\vec{x}_j|^3} (\vec{x}_i-\vec{x}_j)
+\end{align}
+
+\subsection*{Density assignment}
+Cloud-in-cell
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../density-assignment_functions}
+	\caption{}
+	\label{fig:density-assignmentfunctions}
+\end{figure}
 
 %\subsection{Particle approach}
 %
 %\subsection{Grid approach}
 
 
-\subsection{Snapshot of a GADGET-2 simulation}
+\subsection*{Snapshot of a GADGET-2 simulation}
 \cite{aseem_shadab}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../density_assign/density-field-2D}
+	\caption{2D slice of the density field assigned from particles in the snapshot.}
+	\label{fig:density-field-2d}
+\end{figure}
+
 
 \begin{figure}[H]
 	\centering
