@@ -468,13 +468,24 @@ Power spectrum is normalised by constraining this quantity $\sigma_8$ based on o
 
 \section{N-body simulations}
 
-N-body simulation involves numerically solving for the evolution of a large number of particles under the influence of force.
+N-body simulation involves numerically solving for the evolution of a large number of particles under the influence of force. This can be done either by directly solving the equation of motion for all the particles or by assigning fields and solving continuum partial differential equations.\\
 
+When the force is Newtonian gravity between the particles, acceleration of each particle is given by
 \begin{align}
-\vec{a}_i &= - \sum_{j=1 \& j\neq i}^{N} \frac{G m_j}{|\vec{x}_i-\vec{x}_j|^3} (\vec{x}_i-\vec{x}_j)
+\vec{a}_i &= - \sum_{j=1 ~\&~ j\neq i}^{N} \frac{G m_j}{|\vec{x}_i-\vec{x}_j|^3} (\vec{x}_i-\vec{x}_j)
+\end{align}
+We can directly compute this acceleration and hence change positions and velcocities for each time step, but this has a computational complexity of $\mathcal{O}(N^2)$. Hence this is not efficient for very large number of particles.
+\paragraph{Tree methods:}
+One way to make this faster is by computing force due to individual particles only for those that are close and then using cells or multipole expansion for all the distant particles. Example: Barnes–Hut treecode algorithm has a computational complexity of $\mathcal{O}(N \log N)$.
+
+\paragraph{Particle-Mesh technique:}
+Another way is by using field approach just for finding the acceleration field, and then use that to evolve particles. Space is divided into grid cells and at every time step, density is assigned to those cells based on the particle positions (and mass). Gravitational field is then computed from the density field.
+\begin{align}
+\nabla \cdot \vec{g} &= - 4 \pi G \rho
 \end{align}
 
-\subsection*{Density assignment}
+
+\subsection*{Density assignment schemes}
 Cloud-in-cell
 
 \begin{figure}[H]
@@ -518,6 +529,8 @@ Cloud-in-cell
 \begin{thebibliography}{widest entry}
 %\bibitem[GADGET]{cite_key1} bibliographic information
 \bibitem[SDSS]{cite_sdss} \url{https://www.sdss.org/science/}
+\bibitem[Millennium]{millinium} \url{https://wwwmpa.mpa-garching.mpg.de/galform/virgo/millennium/}
+\bibitem[GADGET]{gadget} 
 \bibitem[simulation]{aseem_shadab} Aseem Paranjape, Shadab Alam, Voronoi volume function: a new probe of cosmology and galaxy evolution, Monthly Notices of the Royal Astronomical Society, Volume 495, Issue 3, July 2020, Pages 3233–3251, \url{https://doi.org/10.1093/mnras/staa1379}
 \end{thebibliography}
 
