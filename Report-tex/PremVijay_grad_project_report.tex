@@ -9,6 +9,8 @@
 \usepackage{bigints}
 \usepackage{physics}
 \usepackage{xcolor}
+%\usepackage[export]{adjustbox}
+
 \hypersetup{
 	colorlinks,
 	linkcolor={red!50!black},
@@ -29,16 +31,20 @@
 \hyphenpenalty=5000
 
 \begin{abstract}
-abstract
+abstract\\
+\\
+\\
+\\
+
 \end{abstract}
 
 \section{Introduction}
 Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like\ref{fig:orangepie} large scale structure of the universe is called the cosmic web. 
 
-\begin{wrapfigure}[17]{r}{0.6\linewidth}
-\centering
-\includegraphics[width=0.9\linewidth]{orangepie}
-\caption{ \textit{Large Scale Structure revealed by \cite{cite_sdss}}}
+\begin{wrapfigure}[13]{r}{0.43\linewidth}
+%\centering
+\hfill \caption{ \textit{Large Scale Structure revealed by \cite{cite_sdss}}}
+\hfill \includegraphics[width=0.94\linewidth]{orangepie}
 \label{fig:orangepie}
 \end{wrapfigure}
 
@@ -478,20 +484,71 @@ We can directly compute this acceleration and hence change positions and velcoci
 \paragraph{Tree methods:}
 One way to make this faster is by computing force due to individual particles only for those that are close and then using cells or multipole expansion for all the distant particles. Example: Barnes–Hut treecode algorithm has a computational complexity of $\mathcal{O}(N \log N)$.
 
-\paragraph{Particle-Mesh technique:}
-Another way is by using field approach just for finding the acceleration field, and then use that to evolve particles. Space is divided into grid cells and at every time step, density is assigned to those cells based on the particle positions (and mass). Gravitational field is then computed from the density field.
+\paragraph{Particle-Mesh (PM) technique:}
+Another way is by using field approach just for finding the acceleration field, and then use that to evolve particles. Space is divided into grid cells and at every time step, density is assigned to those cells based on the particle positions (and mass). Gravitational field sourced by this density field is given by the partial differential equations, % $\nabla \cdot \vec{g} = - 4 \pi G \rho$
 \begin{align}
-\nabla \cdot \vec{g} &= - 4 \pi G \rho
+\nabla \cdot \vec{g} &= - 4 \pi G \rho, \qquad \nabla \times \vec{g} = 0\\ 
+\implies \nabla^2 \phi &= 4 \pi G \rho, \quad \text{where}~~~ \vec{g} = -\nabla \phi
+\end{align}
+In the Fourier space,
+\begin{align}
+i \vec{k} \cdot \vec{g}_{\vec{k}} &= - 4 \pi G \rho_{\vec{k}} \qquad i \vec{k} \times \vec{g}_{\vec{k}} = 0\\
+\implies \vec{g}_{\vec{k}} &= 4 \pi G \rho_{\vec{k}} ~\frac{i \vec{k}}{k^2}
+\end{align}
+Hence the acceleration field can be obtained easily by switching to Fourier space with the help of fast Fourier transform. 
+
+%This is in order to improve small 
+
+%\paragraph{TreePM technique:}
+%Tree method 
+
+\subsection*{Density assignment schemes}
+Density of a grid cell is the total mass contained in the cell divided by the cell volume, $\rho_{\text{cell}} = M_{\text{cell}} / V_{\text{cell}}$. Since we have only positions and masses of particles, we need to assume nature of the particles in order to assign mass to grid cells. This choice can be quantified in terms of mass assignment function $W$. Let $(x_{i}, y_{i}, z_{i})$ be the position and $m_{i}$ be the mass of $i$th particle. The cell mass can be written as
+\begin{align}
+M_{\text{cell}} = \sum_{i} m_{i} W_{H} \left( |x_{\text{cell}} - x_{i}| \right) W_{H} \left( |y_{\text{cell}} - y_{i}| \right) W_{H} \left( |z_{\text{cell}} - z_{i}| \right)
+\end{align}
+where $H$ is the cell size and $(x_{\text{cell}}, y_{\text{cell}}, z_{\text{cell}})$ is the position of cell centre also called grid point.
+
+
+\paragraph{Nearest-Grid-Point (NGP) scheme:}
+Particles are assumed to be point-like, so the mass of a cell is
+simply the total mass of all particles within that cell. A given particle contributes its mass completely to the cell with nearest grid point. The mass assignment function is given by
+\begin{align}
+W_{H}(d) = \begin{cases}
+1 &\qquad d < H/2\\
+0 &\qquad \text{else}
+\end{cases}
 \end{align}
 
 
-\subsection*{Density assignment schemes}
-Cloud-in-cell
+
+\paragraph{Cloud-In-Cell (CIC) scheme:}
+Particles are assumed to be uniformly dense cube of size $H$. So that a given particle can contribute mass to a maximum of 8 cells. The mass assignment function is
+\begin{align}
+W_{H}(d) = \begin{cases} \displaystyle
+1- \frac{d}{H} &\qquad d < H\\
+0 &\qquad \text{else}
+\end{cases}
+\end{align}
+
+\paragraph{Triangular-Shaped-Cloud (TSC) scheme:}
+Particles are assumed to be of size $2H$ but with triangular density distribution. The mass assignment function is
+\begin{align}
+W_{H}(d) = \begin{cases} \displaystyle
+\frac{3}{4}- \left( \frac{d}{H} \right) ^2 &\qquad d < \frac{H}{2}\\ \displaystyle
+\frac{1}{2} &\qquad d = \frac{H}{2}\\ \displaystyle
+\frac{1}{2} \left( \frac{3}{2} - \frac{d}{H} \right) ^2 &\qquad \frac{H}{2} < d < \frac{3H}{2}\\ \displaystyle
+0 &\qquad \text{else}
+\end{cases}
+\end{align}
+In this scheme, a single particle contributes mass for upto 27 cells.
+
+%Number of particles that contribute non-zero mass to a given cell varies however the number of cells to which a given particle contributes its mass is limited once we on the assumption about its nature.
 
 \begin{figure}[H]
 	\centering
+	\caption{Mass assignment function for cell size of 1 $h^{-1}$ Mpc}
 	\includegraphics[width=0.7\linewidth]{../density_assign/density-assignment_functions}
-	\caption{}
 	\label{fig:density-assignmentfunctions}
 \end{figure}
 
@@ -500,8 +557,13 @@ Cloud-in-cell
 %\subsection{Grid approach}
 
 
-\subsection*{Snapshot of a GADGET-2 simulation}
-\cite{aseem_shadab}
+\subsection*{Density field in a GADGET-2 simulation}
+\cite{gadget} is a cosmological N-body simulation code that is written in C and it uses MPI to work in high performance clusters. During a run, it can save the particle positions and velocities at each snapshot into binaries. We already had those snapshot binaries for a cold dark matter simulation of $2^{30}$ particles in a box size of  $150 h^{-1}$ Mpc with periodic boundary conditions. \cite{aseem_shadab}
+
+%We take a snapshot from that simulation to implemented the density assignment 
+ 
+Density assignment based on particle particle positions from one of those snapshot binaries is done in python initially.\footnote{\url{https://github.com/premvijay/gradschool-project/blob/master/density_assign/snapshot_density.ipynb}} However, due to the 'for' loop over a billion of particles, it was impractically slow in Python even with nearest grid point scheme. On the other hand, the cloud-in-cell density assignment scheme implemented in C++\footnote{\url{https://github.com/premvijay/gradschool-project/blob/master/density_assign/cic.cpp}} is significantly faster by many orders. The density field obtained is stored in binary and visualised in Python.\footnote{\url{https://github.com/premvijay/gradschool-project/blob/master/density_assign/analyse_density_field.ipynb}} A 2D slice of the density field is shown in \ref{fig:density-field-2d}, and a 3D volume render is shown in \ref{fig:uniformgriddatarenderdensity}.
+
 
 
 \begin{figure}[H]
@@ -515,8 +577,7 @@ Cloud-in-cell
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{../density_assign/UniformGridData_Render_density}
-	\caption{Density field from the snapshot \quad
-		 Volume rendered with yt-project}
+	\caption{Density field from the snapshot volume rendered with \cite{yt-project}}
 	\label{fig:uniformgriddatarenderdensity}
 \end{figure}
 
@@ -528,10 +589,12 @@ Cloud-in-cell
 
 \begin{thebibliography}{widest entry}
 %\bibitem[GADGET]{cite_key1} bibliographic information
+%\bibitem[Millennium]{millinium} \url{https://wwwmpa.mpa-garching.mpg.de/galform/virgo/millennium/}
 \bibitem[SDSS]{cite_sdss} \url{https://www.sdss.org/science/}
-\bibitem[Millennium]{millinium} \url{https://wwwmpa.mpa-garching.mpg.de/galform/virgo/millennium/}
-\bibitem[GADGET]{gadget} 
-\bibitem[simulation]{aseem_shadab} Aseem Paranjape, Shadab Alam, Voronoi volume function: a new probe of cosmology and galaxy evolution, Monthly Notices of the Royal Astronomical Society, Volume 495, Issue 3, July 2020, Pages 3233–3251, \url{https://doi.org/10.1093/mnras/staa1379}
+\bibitem[GADGET]{gadget} The cosmological simulation code GADGET-2,  Springel V., 2005, MNRAS, 364, 1105 \url{https://wwwmpa.mpa-garching.mpg.de/gadget/gadget1-paper.pdf}
+\bibitem[yt-project]{yt-project} 
+The Astrophysical Journal Supplement, Volume 192, Issue 1, article id. 9, 16 pp. (2011), January 2011, \url{https://doi.org/10.1088/0067-0049/192/1/9}
+\bibitem{aseem_shadab} Aseem Paranjape, Shadab Alam, Voronoi volume function: a new probe of cosmology and galaxy evolution, Monthly Notices of the Royal Astronomical Society, Volume 495, Issue 3, July 2020, Pages 3233–3251, \url{https://doi.org/10.1093/mnras/staa1379}
 \end{thebibliography}
 
 

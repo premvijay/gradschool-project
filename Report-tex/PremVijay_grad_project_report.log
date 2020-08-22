@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  22 AUG 2020 00:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.6.22)  23 AUG 2020 03:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,25 +455,25 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
 (./PremVijay_grad_project_report.aux)
 \openout1 = `PremVijay_grad_project_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -506,7 +506,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box52
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 27.
 
 (c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -516,9 +516,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count278
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./PremVijay_grad_project_report.out) (./PremVijay_grad_project_report.out)
 \@outlinefile=\write3
@@ -559,38 +559,42 @@ LaTeX Info: Redefining \nameref on input line 25.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<orangepie.jpg, id=65, 895.345pt x 890.32625pt>
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
+
+ []
+
+<orangepie.jpg, id=67, 895.345pt x 890.32625pt>
 File: orangepie.jpg Graphic file (type jpg)
 <use orangepie.jpg>
-Package pdftex.def Info: orangepie.jpg  used on input line 40.
-(pdftex.def)             Requested size: 238.05841pt x 236.72328pt.
+Package pdftex.def Info: orangepie.jpg  used on input line 47.
+(pdftex.def)             Requested size: 178.18796pt x 177.17905pt.
 
-Underfull \hbox (badness 3068) in paragraph at lines 52--53
-\OT1/cmr/m/n/12 prop-er-ties of the large scale
- []
-
-
-Underfull \hbox (badness 1205) in paragraph at lines 52--53
-\OT1/cmr/m/n/12 struc-ture and its evo-lu-tion is
- []
-
-
-Underfull \hbox (badness 2005) in paragraph at lines 52--53
-\OT1/cmr/m/n/12 cru-cial to test and con-strain
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 52--53
-\OT1/cmr/m/n/12 ini-tial in-ho-mo-geneities to the
+Underfull \hbox (badness 1297) in paragraph at lines 58--59
+\OT1/cmr/m/n/12 the large scale struc-ture and its evo-lu-tion
  []
 
 [1
@@ -601,45 +605,45 @@ ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.63 \end{align}
+l.69 \end{align}
                  <./orangepie.jpg>] [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `math shift' on input line 126.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Lambda' on input line 120.
+(hyperref)                removing `\Lambda' on input line 126.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `math shift' on input line 126.
 
 [3] [4] [5]
-Overfull \hbox (0.65106pt too wide) detected at line 238
+Overfull \hbox (0.65106pt too wide) detected at line 244
 []
  []
 
 [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 356.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 362.
 
 (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 356.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 362.
  [9] [10]
-Underfull \hbox (badness 3735) in paragraph at lines 418--418
+Underfull \hbox (badness 3735) in paragraph at lines 424--424
 [][][]\OT1/cmr/m/n/10 See [][]$\OT1/cmtt/m/n/10 https : / / github . com / prem
 vijay / gradschool-[]project / blob / master / gaussian _ random _
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 418--418
+Underfull \hbox (badness 3735) in paragraph at lines 424--424
 [][][]\OT1/cmr/m/n/10 See [][]$\OT1/cmtt/m/n/10 https : / / github . com / prem
 vijay / gradschool-[]project / blob / master / gaussian _ random _
  []
@@ -650,120 +654,135 @@ File: ../gaussian_random_field/GRF-scale-invariant-spectrum.pdf Graphic file (t
 ype pdf)
 <use ../gaussian_random_field/GRF-scale-invariant-spectrum.pdf>
 Package pdftex.def Info: ../gaussian_random_field/GRF-scale-invariant-spectrum.
-pdf  used on input line 422.
+pdf  used on input line 428.
 (pdftex.def)             Requested size: 308.59187pt x 252.77602pt.
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.427 
+l.433 
        <../gaussian_random_field/GRF-scale-invariant-spectrum.pdf>]
 <../jupyter-nb/standard-cdm-matter-Pk.pdf, id=301, 392.667pt x 266.8369pt>
 File: ../jupyter-nb/standard-cdm-matter-Pk.pdf Graphic file (type pdf)
 <use ../jupyter-nb/standard-cdm-matter-Pk.pdf>
 Package pdftex.def Info: ../jupyter-nb/standard-cdm-matter-Pk.pdf  used on inpu
-t line 433.
+t line 439.
 (pdftex.def)             Requested size: 308.59187pt x 209.70763pt.
 <../jupyter-nb/lambda-cdm-matter-Pk.pdf, id=302, 398.68951pt x 266.8369pt>
 File: ../jupyter-nb/lambda-cdm-matter-Pk.pdf Graphic file (type pdf)
 <use ../jupyter-nb/lambda-cdm-matter-Pk.pdf>
 Package pdftex.def Info: ../jupyter-nb/lambda-cdm-matter-Pk.pdf  used on input 
-line 441.
+line 447.
 (pdftex.def)             Requested size: 308.59187pt x 206.53586pt.
  [12pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.448 \subsubsection
+l.454 \subsubsection
                     *{$\sigma_8$ normalisation}pdfTeX warning (ext4): destinati
 on with the same identifier (name{figure.4}) has been already used, duplicate i
 gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.448 \subsubsection
+l.454 \subsubsection
                     *{$\sigma_8$ normalisation} <../jupyter-nb/standard-cdm-mat
 ter-Pk.pdf> <../jupyter-nb/lambda-cdm-matter-Pk.pdf
 
 pdfTeX warning: pdflatex.exe (file ../jupyter-nb/lambda-cdm-matter-Pk.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
-[13]
-<../density_assign/density-assignment_functions.pdf, id=372, 387.22481pt x 282.
-56754pt>
+[13] [14]
+<../density_assign/density-assignment_functions.pdf, id=384, 443.23404pt x 265.
+50378pt>
 File: ../density_assign/density-assignment_functions.pdf Graphic file (type pdf
 )
 <use ../density_assign/density-assignment_functions.pdf>
 Package pdftex.def Info: ../density_assign/density-assignment_functions.pdf  us
-ed on input line 493.
-(pdftex.def)             Requested size: 308.59187pt x 225.18768pt.
-<../density_assign/density-field-2D.pdf, id=374, 401.53311pt x 317.27907pt>
-File: ../density_assign/density-field-2D.pdf Graphic file (type pdf)
-<use ../density_assign/density-field-2D.pdf>
-Package pdftex.def Info: ../density_assign/density-field-2D.pdf  used on input 
-line 509.
-(pdftex.def)             Requested size: 308.59187pt x 243.83603pt.
- [14pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
+ed on input line 551.
+(pdftex.def)             Requested size: 308.59187pt x 184.85477pt.
+ [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.513 
+l.562 
        <../density_assign/density-assignment_functions.pdf>]
-<../density_assign/UniformGridData_Render_density.png, id=440, 370.0224pt x 370
+Underfull \hbox (badness 10000) in paragraph at lines 565--565
+[][][][][]$\OT1/cmtt/m/n/10 https : / / github . com / premvijay / gradschool-[
+]project / blob / master / density _ assign /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--565
+[][][][][]$\OT1/cmtt/m/n/10 https : / / github . com / premvijay / gradschool-[
+]project / blob / master / density _ assign / cic .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--565
+[][][][][]$\OT1/cmtt/m/n/10 https : / / github . com / premvijay / gradschool-[
+]project / blob / master / density _ assign /
+ []
+
+<../density_assign/density-field-2D.pdf, id=456, 401.53311pt x 317.27907pt>
+File: ../density_assign/density-field-2D.pdf Graphic file (type pdf)
+<use ../density_assign/density-field-2D.pdf>
+Package pdftex.def Info: ../density_assign/density-field-2D.pdf  used on input 
+line 571.
+(pdftex.def)             Requested size: 308.59187pt x 243.83603pt.
+<../density_assign/UniformGridData_Render_density.png, id=457, 370.0224pt x 370
 .0224pt>
 File: ../density_assign/UniformGridData_Render_density.png Graphic file (type p
 ng)
 <use ../density_assign/UniformGridData_Render_density.png>
 Package pdftex.def Info: ../density_assign/UniformGridData_Render_density.png  
-used on input line 517.
+used on input line 579.
 (pdftex.def)             Requested size: 220.42372pt x 220.42294pt.
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.6}
-) has been already used, duplicate ignored
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.532 \bibitem[Millennium]{millinium}
-                                      \url{https://wwwmpa.mpa-garching.mpg.d...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
-s been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.532 \bibitem[Millennium]{millinium}
-                                      \url{https://wwwmpa.mpa-garching.mpg.d...
- <../density_assign/density-field-2D.pdf> <../density_assign/UniformGridData_Re
-nder_density.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
-[][][]$\OT1/cmtt/m/n/12 https : / / wwwmpa . mpa-[]garching . mpg . de / galfor
-m / virgo /
+l.583 
+       <../density_assign/density-field-2D.pdf>]
+Underfull \hbox (badness 1248) in paragraph at lines 596--597
+\OT1/cmr/m/n/12 id. 9, 16 pp. (2011), Jan-uary 2011, [][]$\OT1/cmtt/m/n/12 http
+s : / / doi . org / 10 . 1088 /
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 542.
-[16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 542.
- (./PremVijay_grad_project_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 542.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 542.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 605.
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.605 \end{document}
+                     <../density_assign/UniformGridData_Render_density.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 605.
+
+(./PremVijay_grad_project_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 605.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 605.
 Package rerunfilecheck Info: File `PremVijay_grad_project_report.out' has not c
 hanged.
 (rerunfilecheck)             Checksum: 31DCB27B37A3C3A8BF9768EA8F8BDF8F;1126.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 605.
  ) 
 Here is how much of TeX's memory you used:
- 17488 strings out of 492609
- 299353 string characters out of 6132818
- 376380 words of memory out of 5000000
+ 17502 strings out of 492609
+ 299525 string characters out of 6132818
+ 376430 words of memory out of 5000000
  21130 multiletter control sequences out of 15000+600000
  555363 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,14n,65p,587b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,16n,65p,998b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-di
@@ -780,10 +799,10 @@ c/amsfonts/cm/cmsy6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PremVijay_grad_project_report.pdf (16 pages, 759698 bytes).
+Output written on PremVijay_grad_project_report.pdf (17 pages, 768234 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 154 named destinations out of 1000 (max. 500000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 439 compressed objects within 5 object streams
+ 168 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
