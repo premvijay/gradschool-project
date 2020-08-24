@@ -9,6 +9,7 @@
 \usepackage{bigints}
 \usepackage{physics}
 \usepackage{xcolor}
+\usepackage{cite}
 %\usepackage[export]{adjustbox}
 
 \hypersetup{
@@ -23,6 +24,8 @@
 
 \author{ PremVijay V \qquad Supervisor: Prof. Aseem Paranjape}
 
+\date{August 24, 2020}
+
 
 \begin{document}
 
@@ -31,21 +34,20 @@
 \hyphenpenalty=5000
 
 \begin{abstract}
-abstract\\
-\\
-\\
-\\
+According to standard cosmological models, galaxies form within gravitationally bound regions of dark matter called as halos. Idealised models assume spherical collapse for the formation of these halos, however in reality, tidal effects affect the halo formation. Hence tidal tensor in cosmological volume and its evolution history is an indicator of the halo properties. We setup analytical tools, simulations and computational tools for studying the evolution of tidal tensor.
 
 \end{abstract}
 
-\section{Introduction}
-Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like\ref{fig:orangepie} large scale structure of the universe is called the cosmic web. 
+\hyphenpenalty=5000
 
-\begin{wrapfigure}[13]{r}{0.43\linewidth}
-%\centering
-\hfill \caption{ \textit{Large Scale Structure revealed by \cite{cite_sdss}}}
-\hfill \includegraphics[width=0.94\linewidth]{orangepie}
+\section{Introduction}
+Cosmic Microwave Background (CMB) shows that the Universe was initially homogenous with very small inhomogeneities. Thanks to the attractive gravitational force, those inhomogeneities led to the formation of galaxies. And the universe we see today has a lot of interesting structures well beyond the galactic scale. This foam-like large scale structure of the universe is called the cosmic web.  \hfill~
+\\[-1cm]
+\begin{wrapfigure}[15]{r}{0.46\linewidth}
+	\centering
+\hfill \includegraphics[width=0.9\linewidth]{orangepie}
 \label{fig:orangepie}
+\caption{ \textit{Large Scale Structure revealed by \cite{cite_sdss}}}
 \end{wrapfigure}
 
 %\begin{figure}[tbh]
@@ -55,13 +57,18 @@ Cosmic Microwave Background (CMB) shows that the Universe was initially homogeno
 %	\label{fig:orangepie}
 %\end{figure}
 %\noindent
-Understanding the statistical properties of the large scale structure and its evolution is crucial to test and constrain cosmological models. Computer simulations can be used to evolve initial inhomogeneities to the structure we see today and hence can be compared with sky survey observations.
+Figure \ref{fig:orangepie} shows such web-like structure mapped from observations.
+Understanding the statistical properties of the large scale structure and its evolution is crucial to test and constrain cosmological models.
+% Computer simulations can be used to evolve initial inhomogeneities to the structure we see today and hence can be compared with sky survey observations. 
+Though the evolution of large scale structure can be simulated in computer, we need analytical tools to get a deeper understanding and also to make generic constraints that can be tested by observations. We will look into them in section \ref{sec:anal-tools}. On the other hand, simulations are needed to do full non-linear evolution and they also help in making and refining the analytical models. (see sect. \ref{sec:N-body-simulations}) 
 
 
 \section{Analytical tools}
-Though the evolution of large scale structure can be simulated, we need analytical tools to get a deeper understanding and also to make generic constraints that can be tested by observations. On the other hand, simulations help in making and refining these analytical tools. 
+\label{sec:anal-tools}
+
 
 \subsection{FLRW background}
+\label{sec:flrw-background}
 We assume the standard $\Lambda$CMD model without any curvature. The FLRW metric for the homogeneous background in comoving coordinates is
 \begin{align}
 ds^2 &= -dt^2 + a^2(t) d\vec{x}^2\\
@@ -118,12 +125,15 @@ It is useful to define another time evolution parameter $y \equiv \ln a$.
 \end{align}
 
 \subsection{Growth of Structure}
+\label{sec:growth-of-structure}
+
 While the evolution of background cosmology can be studied fully analytically, the inhomogeneities responsible for structure formation can't be solved exactly without making any ansatz. We will look into different approaches but first let us setup the equations. Since a large fraction of the matter in the Universe is dark matter, gravity plays the major role in structure formation. While we can directly apply the Einstein equations of general relativity, we take a simpler approach by starting with the Newtonian fluid equations.
 
 
 
 
 \subsubsection{Newtonian equations in inhomogeneous $\Lambda$CDM Universe}
+\label{sec:newtonian-equations}
 %Since dark matter only by gravity, we can start with 
 %The density contrast and relative velocity Large scale structure is the density
 %Let us define the quantities  
@@ -140,7 +150,7 @@ The velocity field is then defined as
 &= \frac{da/d \tau}{a} \vec{x} + \frac{d \vec{x}}{d \tau}\\
 &= \mathcal{H} (\tau) ~\vec{x} + \vec{u} (\vec{x}, \tau)
 \end{align}
-where $\vec{u} (\vec{x}, \tau) \equiv d \vec{x} / d\tau$ is called the peculiar velocity, while the first term quantifies the Hubble flow. Due to the time dependance of $\mathcal{H}$, there is an associated acceleration purely due to hubble flow. That acceleration can be found by setting peculiar velocity to zero. 
+where $\vec{u} (\vec{x}, \tau) \equiv d \vec{x} / d\tau$ is called the peculiar velocity, while the first term quantifies the Hubble flow. Due to the time dependence of $\mathcal{H}$, there is an associated acceleration purely due to Hubble flow. That acceleration can be found by setting peculiar velocity to zero. 
 \begin{align}
 \frac{d}{dt} \left( \mathcal{H} (\tau) ~\vec{x} \right) &= \frac{d}{dt} \frac{da}{dt}  ~\vec{x}\\
 &= \ddot{a}(t) ~\vec{x} = \frac{1}{a} \ddot{a}(t) ~\vec{r}
@@ -150,9 +160,9 @@ This acceleration can be written in terms of a potential
 \bar{\phi} \equiv - \frac{1}{2} a \ddot{a} ~\left| \vec{x}\right| ^2 &= - \frac{1}{2} \frac{\ddot{a}}{a} ~\left| \vec{r}\right| ^2\\
 \implies \nabla_{r} \bar{\phi} &= \frac{\ddot{a}}{a} ~\vec{r}
 \end{align}
-Let $\phi$ denote the total gravitational potential in the presence of inhomeneities. We can define the modified gravitaional potential as $\Phi \equiv \phi - \bar{\phi}$.
+Let $\phi$ denote the total gravitational potential in the presence of inhomogeneities. We can define the modified gravitational potential as $\Phi \equiv \phi - \bar{\phi}$.
 
-Evolution of the density inhomogeneity $\delta$, the peculiar velocity field  $\vec{u}$, and the modified potential $\Phi$ is described by the continuity equation, Euler equation and Poisson equation.
+Evolution of the density inhomogeneity $\delta$, the peculiar velocity field  $\vec{u}$, and the modified potential $\Phi$ is described by the continuity equation, Euler equation and Poisson's equation.
 \begin{align}
 \partial_{\tau} \delta + \nabla \cdot \left[ (1+ \delta) \vec{u} \right] &= 0\\
 \partial_{\tau} \vec{u} + \mathcal{H} \vec{u} + \left( \vec{u} \cdot \nabla \right)  \vec{u} &= - \nabla \Phi\\
@@ -162,6 +172,7 @@ where $\nabla$ is with respect to comoving coordinates.
 
 
 \subsubsection{Linear solutions to inhomogeneous CDM}
+\label{sec:linear-solution}
 If the inhomogeneities are small then we can consider them as perturbation to the homogeneous background. To the first order of perturbation, the equations are linear.
 \begin{align}
 \label{eq:cont-linear}
@@ -218,6 +229,7 @@ D_1^{(+)}(a) &= \frac{5}{2} \Omega_{m0} \frac{H(a)}{H_0} \int^{a} \frac{1}{(a'H(
 \end{align}
 
 \subsubsection{Eulerian perturbation theory}
+\label{eulerian-pt}
 We will switch to Fourier space with respect to spatial comoving coordinates. The density inhomogeneity parameter in the Fourier space is defined as
 \begin{align}
 \delta_{\vec{k}}(\tau) \equiv \int d^3k ~e^{-i \vec{k} \cdot \vec{x}} ~\delta(\vec{x},\tau), \qquad
@@ -242,7 +254,7 @@ Fourier transforming the divergence of Euler equation, we get
 \label{eq:euler-eqn-fourier}
 \partial_{\tau} \theta_{\vec{k}} + \mathcal{H} \theta_{\vec{k}} - k^2 ~\Phi_{\vec{k}} &= - \bigint \frac{d^3k_1 d^3k_2} { (2 \pi)^3} ~\frac{\left( \vec{k}_1 \cdot \vec{k}_2 \right) \left| \vec{k}_1 + \vec{k}_2 \right|^2 }{2 k_1^2 k_2^2}  ~\theta_{\vec{k}_2} ~\theta_{\vec{k}_1} ~\delta_D \left( \vec{k} - \left[ \vec{k}_1 + \vec{k}_2 \right] \right)
 \end{align}
-Since the poisson equation is linear in position space, there is no coupling terms in the Fourier space.
+Since the Poisson's equation is linear in position space, there is no coupling terms in the Fourier space.
 \begin{align}
 -k^2 ~\Phi_{\vec{k}} &= \frac{3}{2} \mathcal{H}^2 \Omega_{m}(\tau) ~\delta_{\vec{k}}
 \end{align}
@@ -278,6 +290,7 @@ Higher order corrections can be obtained similarly. This perturbative approach w
 
 
 \subsubsection{Lagrangian perturbation theory}
+\label{sec:lagrangian-pt}
 In Lagrangian approach, coordinates that move along the fluid is used instead of the usual position coordinates. We can define Fluid coordinates $\vec{q}=(q_1,q_2,q_3)$ to be the background comoving coordinates at an initial time, that is $\vec{q} = \vec{x} (\vec{q}, \tau_i)$. At some later time, the displacement field is defined as displacement vector of fluid element.
 \begin{align}
 \vec{\Psi} (\vec{q}, \tau) &\equiv \vec{x} (\vec{q}, \tau) - \vec{x} (\vec{q}, \tau_i)
@@ -289,7 +302,7 @@ The Jacobian matrix of this transformation is
 \begin{align}
 \bm{J}_{ij} &\equiv \pdv{x_i}{q_j} = I_{ij} + \Psi_{i,j}
 \end{align}
-where I is identity matrix and the comma index denotes derivative with respect to a Lagrangian coordianate.
+where I is identity matrix and the comma index denotes derivative with respect to a Lagrangian coordinate.
 ~\\[5pt]
 The Jacobian (determinant) is $J \equiv \text{det}(\bm{J})$, so that $J d^3 q = d^3 x$.\\
 If we assume that the inhomogeneities are negligible at the initial time, then by mass conservation, we get $d^3 q = (1+\delta) d^3 x$.
@@ -322,7 +335,7 @@ Taking divergence of this,
 \nabla_{q} \cdot \vec{\Psi}^{(1)} &= - D_1^{(+)}(\tau) \nabla_{q}^2 \psi^{(1)} (\vec{q})\\
 \implies \delta^{(1)} (\vec{q}) &= \nabla_{q}^2 \psi^{(1)} (\vec{q})
 \end{align}
-Using poisson equation we can see that $\psi^{(1)} (\vec{q}) \propto \Phi^{(1)} (\vec{q},\tau_i)$
+Using Poisson's equation we can see that $\psi^{(1)} (\vec{q}) \propto \Phi^{(1)} (\vec{q},\tau_i)$
 
 \paragraph{Zel'dovich approximation}
 ~\hfill
@@ -358,6 +371,7 @@ This is consistent with the linear Eulerian perturbation theory, which is not su
 But it turns out that the solution \eqref{eq:Zel'dovich-soln} is valid even in mildly non-linear regime. So this Zel'dovich approximation is used to find the initial conditions for N-body simulations
 
 \subsubsection{Spherical collapse}
+\label{sec:spherical-collapse}
 \begin{itemize}
 \item In this method, we can get exact solution in the non-linear regime based on an idealized model. 
 \item The overdensity regions are considered spherically symmetric and its evolution is given by simple Newton's equation.
@@ -376,9 +390,11 @@ But it turns out that the solution \eqref{eq:Zel'dovich-soln} is valid even in m
 
 
 \section{Statistics and initial conditions}
+\label{sec:statistics}
 According to Inflation theory, the initial inhomogeneity was created by quantum fluctuation as Gaussian random field.
 
 \subsection{Gaussian random fields}
+\label{sec:grf}
 A random field in which, values at any N-points is distributed as multivariate Gaussian is called Gaussian random field (GRF). The overdensity $\delta(\vec{x})$ is a Gaussian random field and hence it can be characterized by the mean $\langle \delta(\vec{x}) \rangle$ and the covariance $\langle \delta(\vec{x}) \delta(\vec{x} + \vec{r}) \rangle$. Invoking cosmological principle, this covariance does not vary with $\vec{x}$ and the direction of $\vec{r}$. Hence it depends only on $r = |\vec{r}|$ and it is called the two point correlation function.
 \begin{align}
 \xi(r) \equiv \langle \delta(\vec{x}) \delta(\vec{x} + \vec{r}) \rangle
@@ -408,13 +424,14 @@ Similarly we can define the power spectrum for the gravitational potential $\Phi
 \implies P(k) &\propto k^4 P_{\Phi}(k)\\
 \Delta_{\Phi}^2(k) &\equiv P_{\Phi}(k) \frac{k^3}{2 \pi^2}
 \end{align}
-Inflation generates a scale invariant dimensionless power spectrum for the curvature perturbation.
+Inflation generates a nearly scale invariant dimensionless power spectrum for the curvature perturbation with scalar index, $n_s \approx 1$.
 \begin{align}
-\Delta_{\Phi}^2(k) &\propto k^{0} \implies P_{\Phi}(k) \propto k^{-3} \implies P(k) \propto k
+\Delta_{\Phi}^2(k) &\propto k^{n_s-1} \implies P_{\Phi}(k) \propto k^{n_s-4} \implies P(k) \propto k^{n_s}
 \end{align}
 
 
 \subsection{Generating GRF from a given power spectrum}
+\label{sec:grf-generate}
 \begin{itemize}
 \item Given a power spectrum $P(k)$, the simplest way to generate a Gaussian random field is to do it in the Fourier space.
 \item Since the Fourier modes are uncorrelated, we use univariate Gaussian random generator for each of the mode with variance given by the power spectrum.
@@ -432,6 +449,7 @@ This is implemented as a mini python module\footnote{See \url{https://github.com
 \pagebreak
 
 \subsection{Matter power spectrum from linear theory}
+\label{sec:power-spectrum-linear}
 Initial matter power spectrum generated by inflation is $P(k) \propto k$. The change in form of power spectrum in the linear regime is given by transfer function. We use BBKS fit for the transfer function and set Hubble constant to be $ 70$ (km/s)/Mpc, $h=0.7$.
 
 \begin{figure}[H]
@@ -441,7 +459,7 @@ Initial matter power spectrum generated by inflation is $P(k) \propto k$. The ch
 	\label{fig:standard-cdm-matter-pk}
 \end{figure}
 We can see that the power spectrum has different forms in the small scale and large scale limit. If we now include dark energy, then the transition happens at relatively large scale.
-
+%
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../jupyter-nb/lambda-cdm-matter-Pk}
@@ -450,9 +468,10 @@ We can see that the power spectrum has different forms in the small scale and la
 \end{figure}
 %width=0.7\linewidth
 
-Inflation gave only the form of the initial power spectrum, we have to normalise bysing observational constraint.
-\subsubsection*{$\sigma_8$ normalisation}
-$\sigma_8$ is defined as the root mean square of density variation after smoothing by correlating with spherical top-hat function of radius 8 h$^{-1}$ Mpc. In the Fourier space, this is equivalent to multiplying by the Fourier transform of that top-hat function.
+\noindent
+Inflation theory gives the form of the initial power spectrum, so we have to normalise by using observational constraint.
+\subsubsection*{Sigma-8 normalisation}
+$\sigma_8$ is defined as the root mean square of density variation smoothed by correlating with spherical top-hat function of radius 8 h$^{-1}$ Mpc. In the Fourier space, this is equivalent to multiplying by the Fourier transform of that top-hat function.
 \begin{align}
 W_s(k) &= 3 ~\frac{j_1(k R_8)}{k R_8} \quad \text{where } R_8 = 8 \text{ h$^{-1}$ Mpc}
 \end{align}
@@ -473,14 +492,14 @@ Power spectrum is normalised by constraining this quantity $\sigma_8$ based on o
 %\subsubsection*{Generating GRF from power spectrum}
 
 \section{N-body simulations}
-
+\label{sec:N-body-simulations}
 N-body simulation involves numerically solving for the evolution of a large number of particles under the influence of force. This can be done either by directly solving the equation of motion for all the particles or by assigning fields and solving continuum partial differential equations.\\
 
 When the force is Newtonian gravity between the particles, acceleration of each particle is given by
 \begin{align}
 \vec{a}_i &= - \sum_{j=1 ~\&~ j\neq i}^{N} \frac{G m_j}{|\vec{x}_i-\vec{x}_j|^3} (\vec{x}_i-\vec{x}_j)
 \end{align}
-We can directly compute this acceleration and hence change positions and velcocities for each time step, but this has a computational complexity of $\mathcal{O}(N^2)$. Hence this is not efficient for very large number of particles.
+We can directly compute this acceleration and hence change positions and velocities for each time step, but this has a computational complexity of $\mathcal{O}(N^2)$. Hence this is not efficient for very large number of particles.
 \paragraph{Tree methods:}
 One way to make this faster is by computing force due to individual particles only for those that are close and then using cells or multipole expansion for all the distant particles. Example: Barnes–Hut treecode algorithm has a computational complexity of $\mathcal{O}(N \log N)$.
 
@@ -569,22 +588,25 @@ Density assignment based on particle particle positions from one of those snapsh
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../density_assign/density-field-2D}
-	\caption{2D slice of the density field assigned from particles in the snapshot.}
+	\caption{2D slice of the density field assigned from particles in a snapshot in the simulation.}
 	\label{fig:density-field-2d}
 \end{figure}
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{../density_assign/UniformGridData_Render_density}
-	\caption{Density field from the snapshot volume rendered with \cite{yt-project}}
+	\includegraphics[width=0.6\linewidth]{../density_assign/UniformGridData_Render_density-2}
+	\caption{Density field from a snapshot in the simulation, volume rendered with \cite{yt-project}}
 	\label{fig:uniformgriddatarenderdensity}
 \end{figure}
 
 
 \section{Conclusion and Future plan}
-
-
+In the context of Zel'dowich approximation in section \ref{sec:lagrangian-pt}, we have defined tidal tensor for the linear regime. 
+%This can be extended to non-linear evolution in simulations. We can use the 
+Our ultimate goal is to study the evolution of tidal tensor across both linear and non-linear regimes. 
+%In section \ref{sec:anal-tools}, we study the standard analytical
+In section \ref{sec:power-spectrum-linear}, we have linear theory power spectrum. Our plan is to generate density field from that spectrum using the method in section \ref{sec:grf-generate} and to compute tidal tensor field in the Fourier space. We will then obtain the evolution history of non-linear tidal tensor field by doing density assignment for each snapshot in the simulation and then switching to Fourier space. We will then identify halos in the simulation and study the effect of tidal forces on their properties.
 
 
 \begin{thebibliography}{widest entry}
